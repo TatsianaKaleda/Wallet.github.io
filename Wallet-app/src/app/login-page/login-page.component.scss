@@ -1,0 +1,8 @@
+@import "src/assets/styles/main/colors";
+
+.login-page {
+  &-sidebar {
+    width: 45%;
+    background-color: $green1;
+  }
+}

@@ -1,0 +1,95 @@
+@import "src/assets/styles/main/colors";
+
+.wlt-welcome {
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+  background: $grey2;
+
+  &-position {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 48px 64px 64px;
+    width: 100%;
+  }
+
+  &__logo {
+    display: flex;
+    align-items: center;
+    margin-bottom: 64px;
+
+    &-item {
+      margin-right: 16px;
+      color: $grey3;
+
+      & .mat-icon {
+        height: auto;
+        width: auto;
+        font-size: 40px;
+      }
+    }
+
+    &-company {
+      &-name {
+        margin: 0;
+        font-size: 20px;
+        color: $white;
+        letter-spacing: 1px;
+
+        &-desc {
+          display: block;
+        }
+      }
+    }
+  }
+
+  &__main {
+    &-title {
+      &-value {
+        margin: 100px 0 0;
+        font-size: 88px;
+        color: $white;
+        font-weight: 100;
+        letter-spacing: 1px;
+      }
+    }
+
+    &-subtitle, &-description {
+      &-value {
+        margin: 0;
+        color: $grey4;
+        font-weight: 100;
+        letter-spacing: 1px;
+      }
+    }
+
+    &-subtitle {
+      &-value {
+        margin-bottom: 48px;
+        font-size: 20px;
+      }
+    }
+
+    &-description {
+      max-width: 350px;
+    }
+
+    &-login {
+      margin-top: 32px;
+
+      &-btn {
+        border-color: $green1;
+        color: $green1;
+      }
+    }
+  }
+
+  &-bg {
+    width: 350px;
+    height: 350px;
+    margin-right: 8%;
+    background-size: contain;
+    background: url("src/assets/images/welcome-bg.svg") no-repeat center;
+  }
+}

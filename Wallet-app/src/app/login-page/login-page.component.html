@@ -1,0 +1,15 @@
+<mat-drawer-container class="login-page">
+  <mat-drawer-content>
+    <app-welcome
+      (showRegistration)="drawer.toggle()">
+    </app-welcome>
+  </mat-drawer-content>
+
+  <mat-drawer #drawer
+              class="login-page-sidebar"
+              [mode]="'over'"
+              position="end">
+    <app-sign-in>
+    </app-sign-in>
+  </mat-drawer>
+</mat-drawer-container>
