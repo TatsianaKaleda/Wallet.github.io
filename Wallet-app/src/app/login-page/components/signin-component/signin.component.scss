@@ -3,7 +3,19 @@
 .wlt-signin {
   display: flex;
   align-items: center;
+  justify-content: center;
   height: 100%;
+
+  .mat-form-field-flex .mat-input-element {
+    color: $grey2;
+  }
+  .mat-form-field-appearance-legacy .mat-form-field-ripple {
+    height: 1px;
+  }
+
+  .mat-form-field.mat-focused .mat-form-field-ripple {
+    background-color: $white-lite;
+  }
 
   &-position {
     padding: 64px;
@@ -25,5 +37,42 @@
       font-weight: 100;
       font-size: 14px;
     }
+
+    &-submit {
+      color: $white-lite;
+      border-color: $white-lite;
+      font-weight: 100;
+      font-size: 14px;
+    }
+  }
+
+  &-controls {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 32px;
+  }
+
+  &-registration {
+    &-text {
+      margin: 0;
+      padding-left: 12px;
+      color: $white-disabled;
+
+      & .mat-button {
+        margin-left: 6px;
+        padding: 0;
+        text-align: right;
+        color: $white-lite;
+        font-weight: 400;
+
+        &:hover {
+          & .mat-button-focus-overlay {
+            background: $white;
+          }
+        }
+      }
+    }
   }
 }
+
+

@@ -1,4 +1,6 @@
-/* You can add global styles to this file, and also import other style files */
+@import "./assets/styles/main/colors";
+@import "./assets/styles/main/theme";
+@import "./src/app/login-page/components/signin-component/signin.component";
 
 html, body {
   height: 100%;
@@ -9,8 +11,6 @@ body {
   min-height: 100vh;
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
-
-@import "./assets/styles/main/colors";
 
 p {
   color: $grey1;

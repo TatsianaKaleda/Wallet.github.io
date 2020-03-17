@@ -1,21 +1,16 @@
-//@import '~@angular/material/theming';
-////@import 'app/lab-editor/file-tree/file-tree-theme.scss';
-//
-//@include mat-core();
-//
-//$custom-theme-primary: mat-palette($mat-light-blue);
-//$custom-theme-accent: mat-palette($mat-orange, A200, A100, A400);
-//$custom-theme-warn: mat-palette($mat-red);
-//
-//$custom-theme: mat-light-theme($custom-theme-primary, $custom-theme-accent, $custom-theme-warn);
-//
-//@mixin custom-theme($theme) {
-//  @include ml-file-tree-theme(theme);
-//}
-//
-//@include angular-material-theme($custom-theme);
-//@include custom-theme($custom-theme);
+@import './colors';
+@import '~@angular/material/theming';
+@include mat-core();
 
+$my-scheme: (
+  500: rgba(255, 255, 255, 0.4),
+  contrast: (
+  )
+);
 
-//@use "material-components-web";
+$my-app-primary: mat-palette($my-scheme);
+$my-app-accent: mat-palette($mat-teal);
+$my-app-warn: mat-palette($mat-deep-orange);
+$my-app-theme: mat-light-theme($my-app-primary, $my-app-accent, $my-app-warn);
+@include angular-material-theme($my-app-theme);
 
