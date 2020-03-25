@@ -4,13 +4,26 @@
       Login to your account
     </h3>
 
-    <form class="wlt-signin-form">
+    <form class="wlt-signin-form"
+          [formGroup]="signInForm">
       <mat-form-field class="example-full-width">
         <mat-label class="wlt-signin-form-label">
           Email
         </mat-label>
 
-        <input matInput placeholder="Your email">
+        <input matInput type="email" placeholder="Your email"
+               [formControlName]="userEnum.email">
+
+        <mat-error
+          *ngIf="signInForm.controls[userEnum.email].hasError('email') &&
+          !signInForm.controls[userEnum.email].hasError('required')">
+          Please enter valid email
+        </mat-error>
+
+        <mat-error
+          *ngIf="signInForm.controls[userEnum.email].hasError('required')">
+          Email is required
+        </mat-error>
       </mat-form-field>
 
       <mat-form-field class="example-full-width">
@@ -18,13 +31,19 @@
           Password
         </mat-label>
 
-        <input matInput placeholder="Password">
+        <input matInput type="password" placeholder="Password"
+               [formControlName]="userEnum.password">
+
+        <mat-error
+          *ngIf="signInForm.controls[userEnum.password].hasError('required')">
+          Password is required
+        </mat-error>
       </mat-form-field>
 
       <div class="wlt-signin-controls">
         <button mat-stroked-button
-                type="submit"
-                class="wlt-signin-form-submit">
+                class="wlt-signin-form-submit"
+                (click)="getUser()">
           Login
         </button>
 
@@ -32,7 +51,9 @@
           <p class="wlt-signin-registration-text">
             or
             <span>
-          <button mat-button>
+          <button mat-button
+                  class="wlt-signin-form-submit-create"
+                  (click)="openSignUpWindow()">
             Create Account
           </button>
         </span>
@@ -42,3 +63,20 @@
     </form>
   </div>
 </section>
+
+<!--
+<form class="example-form">
+  <mat-form-field class="example-full-width">
+    <mat-label>Email</mat-label>
+    <input matInput [formControl]="emailFormControl" [errorStateMatcher]="matcher"
+           placeholder="Ex. pat@example.com">
+    <mat-hint>Errors appear instantly!</mat-hint>
+    <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+      Please enter a valid email address
+    </mat-error>
+    <mat-error *ngIf="emailFormControl.hasError('required')">
+      Email is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+</form>
+-->
