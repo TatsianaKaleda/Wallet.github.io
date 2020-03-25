@@ -1,0 +1,78 @@
+<section class="wlt-signup">
+  <div class="wlt-signup-position">
+    <div class="wlt-signup-title-back">
+      <button mat-button
+              class="wlt-signup-title-back-btn"
+              (click)="backToLogin()">
+        <mat-icon>keyboard_backspace</mat-icon>
+        Back to Log In
+      </button>
+    </div>
+
+    <div class="wlt-signup-title-container">
+      <h3 class="wlt-signup-title">
+        Sing Up
+      </h3>
+      <p class="wlt-signup-subtitle">
+        Please fill in this form to create an account!
+      </p>
+    </div>
+  </div>
+
+  <form [formGroup]='signUpForm' class="wlt-signup-form">
+    <mat-form-field class="example-full-width">
+      <mat-label class="wlt-signup-form-label">
+        First Name
+      </mat-label>
+
+      <input matInput placeholder="Enter your first name"
+             [formControlName]="userEnum.firstName">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label class="wlt-signup-form-label">
+        Last Name
+      </mat-label>
+
+      <input matInput placeholder="Enter your last name"
+             [formControlName]="userEnum.lastName">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label class="wlt-signup-form-label">
+        Email
+      </mat-label>
+
+      <input matInput placeholder="Enter your email"
+             [formControlName]="userEnum.email">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label class="wlt-signup-form-label">
+        Password
+      </mat-label>
+
+      <input matInput placeholder="Enter your password"
+             [formControlName]="userEnum.password">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label class="wlt-signup-form-label">
+        Confirm Password
+      </mat-label>
+
+      <input matInput placeholder="Confirm your password"
+             [formControlName]="userEnum.confirmPassword">
+    </mat-form-field>
+
+    <div class="wlt-signup-control">
+      <button mat-stroked-button
+              type="submit"
+              class="wlt-signup-form-submit"
+              (click)="registration()">
+        Registration
+      </button>
+    </div>
+  </form>
+
+</section>

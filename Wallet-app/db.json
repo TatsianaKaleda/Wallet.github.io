@@ -1,0 +1,25 @@
+{
+  "employee": [
+    {
+      "id": 1,
+      "first_name": "Sebastian",
+      "last_name": "Eschweiler",
+      "password": "1",
+      "email": "1"
+    },
+    {
+      "id": 2,
+      "first_name":" Steve ",
+      "last_name":" Palmer ",
+      "password": "1",
+      "email":" steve@codingthesmartway.com "
+    },
+    {
+      "id": 3,
+      "first_name":" Ann ",
+      "last_name":" Smith " ,
+      "password": "1",
+      "email": "ann@codingthesmartway.com"
+    }
+  ]
+}

@@ -1,0 +1,90 @@
+@import "src/assets/styles/main/colors";
+
+.app-sign-up {
+  display: block;
+  height: 100%;
+  padding: 64px;
+}
+
+.wlt-signup {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  height: 100%;
+
+  .mat-form-field-flex .mat-input-element {
+    color: $grey2;
+  }
+
+  .mat-form-field-appearance-legacy .mat-form-field-ripple {
+    height: 1px;
+  }
+
+  .mat-form-field.mat-focused .mat-form-field-ripple {
+    background-color: $white-lite;
+  }
+
+  &-position, &-form {
+    flex: 0 0 100%;
+    width: 100%;
+  }
+
+  &-position {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    & .wlt-signup-title-back,
+    & .wlt-signup-title-container {
+      flex: 0 0 100%;
+      width: 100%;
+    }
+
+    & .wlt-signup-title-back {
+      &-btn {
+        padding: 0;
+        color: $grey2;
+        font-weight: 500;
+        font-size: 12px;
+      }
+    }
+  }
+
+  &-title {
+    margin: 0;
+    color: $white;
+    font-size: 40px;
+    font-weight: 100;
+
+    &-container {
+      text-align: center;
+    }
+  }
+
+  &-form {
+    max-width: 327px;
+    margin: 0 auto;
+
+    & mat-form-field {
+      display: block;
+    }
+
+    &-label {
+      color: $white;
+      font-weight: 100;
+      font-size: 14px;
+    }
+
+    &-submit {
+      color: $white-lite;
+      border-color: $white-lite;
+      font-weight: 100;
+      font-size: 14px;
+    }
+  }
+
+  &-control {
+    margin-top: 32px;
+  }
+}

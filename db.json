@@ -1,0 +1,41 @@
+{
+  "employee": [
+    {
+      "id": 1,
+      "password": "1",
+      "first_name": "Sebastian",
+      "last_name": "Eschweiler",
+      "email": "1@1.ru"
+    },
+    {
+      "id": 2,
+      "password": "2",
+      " first_name ": " Steve ",
+      " last_name ": " Palmer ",
+      "email": "steve@codingthesmartway.com"
+    },
+    {
+      " id ": 3,
+      "password": "3",
+      " first_name ": " Ann ",
+      " last_name ": " Smith ",
+      "электронная почта": "ann@codingthesmartway.com"
+    },
+    {
+      "id": 3
+    },
+    {
+      "id": 4
+    },
+    {
+      "id": 5
+    },
+    {
+      "id": 6
+    },
+    {
+      "email": "1",
+      "id": 7
+    }
+  ]
+}
