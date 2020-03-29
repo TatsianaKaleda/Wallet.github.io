@@ -54,12 +54,12 @@ export class SignInComponent implements OnInit {
   }
 
   public getUser(): void {
-    let expiration = this.minutes(new Date(), 30);
+    let expiration = this.minutes(new Date(), 30000);
     this.authorizationService.getUserData(this.signInForm.controls.email.value, this.signInForm.controls.password.value)
       .subscribe(
         (response) => {
           this.user = response;
-          if(response) {
+          if (response) {
             if (response.length != 0) {
               this.cookieService.set("email", response[0].email, expiration);
               this.moveToHomePage();

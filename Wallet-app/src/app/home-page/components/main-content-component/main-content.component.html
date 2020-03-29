@@ -1,0 +1,11 @@
+<section class="wlt-navigation">
+  <app-small-menu (showBigMenu)="showBigMenuEvent()"></app-small-menu>
+</section>
+
+<section class="wlt-main">
+  <app-header
+    [userName]="currentUser.first_name">
+  </app-header>
+
+  <app-report></app-report>
+</section>

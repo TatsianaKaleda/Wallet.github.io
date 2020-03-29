@@ -1,0 +1,17 @@
+@import "src/assets/styles/main/colors";
+
+.wlt {
+  &-home-main-content {
+    display: flex;
+  }
+
+  &-navigation {
+    flex: 0 0 55px;
+    width: 55px;
+  }
+
+  &-main {
+    flex: 0 0 calc(100% - 55px);
+    width: calc(100% - 55px);
+  }
+}

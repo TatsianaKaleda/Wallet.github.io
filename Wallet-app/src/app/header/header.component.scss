@@ -1,4 +1,33 @@
+@import "src/assets/styles/main/colors";
+
 .wlt-header {
-    height: 50px;
-    background: green;
+  & .mat-toolbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 70px;
+    height: 40px;
+    background: $grey1;
+
+    & .mat-button {
+      color: $white;
+      transition: 0.3s;
+
+      &:hover {
+        color: $green2;
+      }
+
+      &:active {
+        color: $green3;
+      }
+    }
+
+    & .mat-icon   {
+      margin-right: 10px;
+      font-size: 24px;
+
+      &.logo-icon {
+        color: $white;
+      }
+    }
+  }
 }

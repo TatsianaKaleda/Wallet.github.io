@@ -9,17 +9,24 @@
     },
     {
       "id": 2,
-      "first_name":" Steve ",
-      "last_name":" Palmer ",
+      "first_name": " Steve ",
+      "last_name": " Palmer ",
       "password": "1",
-      "email":" steve@codingthesmartway.com "
+      "email": " steve@codingthesmartway.com "
     },
     {
       "id": 3,
-      "first_name":" Ann ",
-      "last_name":" Smith " ,
+      "first_name": " Ann ",
+      "last_name": " Smith ",
       "password": "1",
       "email": "ann@codingthesmartway.com"
+    },
+    {
+      "first_name": "Татьяна",
+      "last_name": "Каледа",
+      "password": "123",
+      "email": "sfas@sdfsd.dsfs",
+      "id": 17
     }
   ]
 }

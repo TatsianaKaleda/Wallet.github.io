@@ -18,9 +18,27 @@ p {
 }
 
 .mat-drawer-inner-container {
-  overflow-x: hidden!important;
+  overflow-x: hidden !important;
 }
 
 .mat-drawer-inner-container {
-  overflow-x: hidden!important;
+  overflow-x: hidden !important;
+}
+
+.wlt-home-main-content {
+  display: flex;
+}
+
+.mat-button-wrapper {
+  color: $white;
+  font-weight: 100;
+  transition: 0.3s;
+
+  &:hover {
+    color: $green2;
+  }
+
+  &:active {
+    color: $green3;
+  }
 }

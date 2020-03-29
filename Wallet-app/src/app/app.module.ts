@@ -14,11 +14,16 @@ import { WelcomeComponent } from './login-page/components/welcome-component/welc
 import { SignInComponent } from './login-page/components/signin-component/signin.component';
 import { SignUpComponent } from './login-page/components/signup-component/signup.component';
 import { HomePageComponent } from './home-page/home-page.component';
-
-
+import { BudgetComponent } from './home-page/components/main-content-component/budget-component/budget.component';
+import { ProfitsComponent } from './home-page/components/main-content-component/profits-component/profits.component';
+import { SpendingComponent } from './home-page/components/main-content-component/spending-component/spending.component';
+import { ReportComponent } from './home-page/components/main-content-component/report-component/report.component';
+import {MainContentComponent} from "./home-page/components/main-content-component/main-content.component";
+import {BigMenuComponent} from "./home-page/components/bigMenu-component/bigMenu.component";
+import {SmallMenuComponent} from "./home-page/components/main-content-component/small-menu-component/small-menu.component";
 //Shared components
 
-//Materiak components
+//Material components
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
@@ -30,6 +35,8 @@ const sharedComponents = [
 ];
 
 import {AuthorizationService} from "./login-page/service/getUserData.service";
+import {MatSelectModule} from "@angular/material/select";
+import { NgxChartsModule } from '@swimlane/ngx-charts';
 
 const appComponents = [
   AppComponent,
@@ -38,6 +45,13 @@ const appComponents = [
   WelcomeComponent,
   SignInComponent,
   SignUpComponent,
+  BudgetComponent,
+  ProfitsComponent,
+  SpendingComponent,
+  ReportComponent,
+  MainContentComponent,
+  BigMenuComponent,
+  SmallMenuComponent
 ];
 
 const materialModules = [
@@ -62,7 +76,9 @@ const materialModules = [
     BrowserAnimationsModule,
     ReactiveFormsModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatSelectModule,
+    NgxChartsModule
   ],
   providers: [AuthorizationService],
   bootstrap: [AppComponent]

@@ -1,1 +1,18 @@
-<p>home-page works!</p>
+<mat-drawer-container class="home-page">
+  <mat-drawer-content>
+    <app-main-content
+      [currentUser]="currentUser[0]"
+      (showBigMenu)="drawer.toggle()">
+    </app-main-content>
+  </mat-drawer-content>
+
+  <mat-drawer #drawer
+              class="home-page-sidebar"
+              [mode]="'over'"
+              position="start">
+
+    <app-bigMenu
+      [@enterAnimation]>
+    </app-bigMenu>
+  </mat-drawer>
+</mat-drawer-container>
