@@ -37,6 +37,7 @@ const sharedComponents = [
 import {AuthorizationService} from "./login-page/service/getUserData.service";
 import {MatSelectModule} from "@angular/material/select";
 import { NgxChartsModule } from '@swimlane/ngx-charts';
+import {MatGridListModule} from "@angular/material/grid-list";
 
 const appComponents = [
   AppComponent,
@@ -69,17 +70,18 @@ const materialModules = [
     ...appComponents,
     HomePageComponent
   ],
-  imports: [
-    ...materialModules,
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    ReactiveFormsModule,
-    FormsModule,
-    HttpClientModule,
-    MatSelectModule,
-    NgxChartsModule
-  ],
+    imports: [
+        ...materialModules,
+        BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        ReactiveFormsModule,
+        FormsModule,
+        HttpClientModule,
+        MatSelectModule,
+        NgxChartsModule,
+        MatGridListModule
+    ],
   providers: [AuthorizationService],
   bootstrap: [AppComponent]
 })

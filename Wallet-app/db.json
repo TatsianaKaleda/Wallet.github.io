@@ -5,28 +5,51 @@
       "first_name": "Sebastian",
       "last_name": "Eschweiler",
       "password": "1",
-      "email": "1"
+      "email": "1",
+      "spending": [
+        {
+          "value": 5,
+          "name": "food"
+        },
+        {
+          "value": 7,
+          "name": "clothes"
+        }
+      ]
     },
     {
       "id": 2,
       "first_name": " Steve ",
       "last_name": " Palmer ",
       "password": "1",
-      "email": " steve@codingthesmartway.com "
+      "email": " steve@codingthesmartway.com ",
+      "spending": [
+        {
+          "value": 4,
+          "name": "sport"
+        },
+        {
+          "value": 9,
+          "name": "cafe"
+        }
+      ]
     },
     {
       "id": 3,
       "first_name": " Ann ",
       "last_name": " Smith ",
       "password": "1",
-      "email": "ann@codingthesmartway.com"
-    },
-    {
-      "first_name": "Татьяна",
-      "last_name": "Каледа",
-      "password": "123",
-      "email": "sfas@sdfsd.dsfs",
-      "id": 17
+      "email": "ann@codingthesmartway.com",
+      "spending": [
+        {
+          "value": 2,
+          "name": "clothes"
+        },
+        {
+          "value": 7,
+          "name": "food"
+        }
+      ]
     }
   ]
 }
