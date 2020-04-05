@@ -11,7 +11,7 @@
           Email
         </mat-label>
 
-        <input matInput type="email" placeholder="Your email"
+        <input matInput type="email" placeholder="Enter your email"
                [formControlName]="userEnum.email">
 
         <mat-error
@@ -26,13 +26,18 @@
         </mat-error>
       </mat-form-field>
 
-      <mat-form-field class="example-full-width">
+      <mat-form-field class="example-full-width"
+                                 appearance="fill">
         <mat-label class="wlt-signin-form-label">
           Password
         </mat-label>
 
-        <input matInput type="password" placeholder="Password"
+        <input matInput [type]="hide ? 'password' : 'text'" placeholder="Enter your password"
                [formControlName]="userEnum.password">
+
+        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
 
         <mat-error
           *ngIf="signInForm.controls[userEnum.password].hasError('required')">

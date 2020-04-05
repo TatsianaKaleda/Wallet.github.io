@@ -17,6 +17,18 @@
     background-color: $white-lite;
   }
 
+  .mat-form-field-appearance-fill .mat-form-field-flex {
+    background-color: rgba(0,0,0,0);
+  }
+
+  .mat-form-field-underline {
+    color: white;
+  }
+
+  .mat-form-field-ripple {
+    background-color: $white-lite;
+  }
+
   &-position {
     padding: 64px;
   }
@@ -44,6 +56,8 @@
       font-weight: 100;
       font-size: 14px;
     }
+
+
   }
 
   &-controls {

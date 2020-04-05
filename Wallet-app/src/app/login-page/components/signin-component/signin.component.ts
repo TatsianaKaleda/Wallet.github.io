@@ -15,6 +15,7 @@ export class SignInComponent implements OnInit {
 
   @Input()
   public showSignUp: boolean;
+  public hide = true;
 
   @Output()
   showSignUpChange = new EventEmitter();

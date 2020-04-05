@@ -1,7 +1,7 @@
 <mat-drawer-container class="home-page">
   <mat-drawer-content>
     <app-main-content
-      [currentUser]="currentUser[0]"
+      [currentUser]="currentUser ? currentUser[0] : null"
       (showBigMenu)="drawer.toggle()">
     </app-main-content>
   </mat-drawer-content>

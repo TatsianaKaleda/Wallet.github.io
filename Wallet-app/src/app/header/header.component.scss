@@ -2,6 +2,8 @@
 
 .wlt-header {
   & .mat-toolbar {
+    position: fixed;
+    z-index: 4;
     display: flex;
     justify-content: space-between;
     padding: 0 70px;

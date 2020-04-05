@@ -67,13 +67,17 @@
       </mat-error>
     </mat-form-field>
 
-    <mat-form-field class="example-full-width">
+    <mat-form-field class="example-full-width"
+                    appearance="fill">
       <mat-label class="wlt-signup-form-label">
         Password
       </mat-label>
 
-      <input matInput placeholder="Enter your password"
+      <input matInput [type]="hide ? 'password' : 'text'" placeholder="Enter your password"
              [formControlName]="userEnum.password">
+      <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </button>
 
       <mat-error
         *ngIf="signUpForm.hasError('required', userEnum.password)">
@@ -81,14 +85,18 @@
       </mat-error>
     </mat-form-field>
 
-    <mat-form-field class="example-full-width">
+    <mat-form-field class="example-full-width"
+                    appearance="fill">
       <mat-label class="wlt-signup-form-label">
         Confirm Password
       </mat-label>
 
-      <input matInput placeholder="Confirm your password"
+      <input matInput [type]="hide ? 'password' : 'text'" placeholder="Confirm your password"
              [errorStateMatcher]="matcher"
              [formControlName]="userEnum.confirmPassword">
+      <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </button>
 
       <mat-error
         *ngIf="signUpForm?.hasError('notSame')">

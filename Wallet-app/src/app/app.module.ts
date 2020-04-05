@@ -30,6 +30,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatInputModule } from '@angular/material/input';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import {MatGridListModule} from "@angular/material/grid-list";
+
 
 const sharedComponents = [
 ];
@@ -37,7 +39,6 @@ const sharedComponents = [
 import {AuthorizationService} from "./login-page/service/getUserData.service";
 import {MatSelectModule} from "@angular/material/select";
 import { NgxChartsModule } from '@swimlane/ngx-charts';
-import {MatGridListModule} from "@angular/material/grid-list";
 
 const appComponents = [
   AppComponent,
@@ -62,7 +63,7 @@ const materialModules = [
   MatSidenavModule,
   MatInputModule,
   MatSnackBarModule
-];
+  ];
 
 @NgModule({
   declarations: [
@@ -81,6 +82,7 @@ const materialModules = [
         MatSelectModule,
         NgxChartsModule,
         MatGridListModule
+
     ],
   providers: [AuthorizationService],
   bootstrap: [AppComponent]

@@ -4,10 +4,12 @@
 
 <section class="wlt-main">
   <app-header
-    [userName]="currentUser.first_name">
+    [userName]="currentUser?.first_name">
   </app-header>
 
   <app-report
     [user]="currentUser">
   </app-report>
+
+  <app-spending></app-spending>
 </section>

@@ -7,7 +7,7 @@ import {UserModel} from "../login-page/models/user.model";
 @Component({
   selector: 'app-home-page',
   templateUrl: './home-page.component.html',
-  styleUrls: ['./home-page.component.css'],
+  styleUrls: ['./home-page.component.scss'],
   animations: [
     trigger(
       'enterAnimation', [
