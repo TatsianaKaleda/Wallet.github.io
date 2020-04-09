@@ -1,0 +1,23 @@
+.wlt-dialog-popup {
+  &-title {
+    font-size: 25px;
+    font-weight: 100;
+    text-align: center;
+  }
+
+  &-form {
+    display: flex;
+    flex-wrap: wrap;
+
+    .mat-form-field {
+      flex: 0 0 100%;
+    }
+
+    .mat-form-field-appearance-fill .mat-form-field-flex {
+      background-color: rgba(0,0,0,0);
+    }
+    .mat-form-field-underline {
+      color: white;
+    }
+  }
+}

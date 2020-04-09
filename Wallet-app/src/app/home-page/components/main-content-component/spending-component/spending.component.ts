@@ -1,5 +1,7 @@
-import {Component, Input, OnInit, Output} from "@angular/core";
-import  {MatDialog } from '@angular/material/dialog';
+import {Component, Input, OnInit, Output, Inject} from "@angular/core";
+import {MAT_DIALOG_DATA, MatDialog, MatDialogModule, MatDialogRef} from '@angular/material/dialog';
+import { DialogPopupComponent } from './components/dialog-popup.component';
+
 
 
 
@@ -8,9 +10,13 @@ import  {MatDialog } from '@angular/material/dialog';
   templateUrl: './spending.component.html',
   styleUrls: ['./spending.component.scss']
 })
-export class SpendingComponent implements OnInit {
+export class SpendingComponent {
+  fileNameDialogRef: MatDialogRef<DialogPopupComponent>;
 
-  constructor() {}
+  constructor(private dialog: MatDialog) {}
 
-  ngOnInit() {}
+  public openDialog(): void {
+    this.fileNameDialogRef = this.dialog.open(DialogPopupComponent);
+  }
 }
+

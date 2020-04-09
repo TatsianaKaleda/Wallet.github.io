@@ -21,6 +21,7 @@ import { ReportComponent } from './home-page/components/main-content-component/r
 import {MainContentComponent} from "./home-page/components/main-content-component/main-content.component";
 import {BigMenuComponent} from "./home-page/components/bigMenu-component/bigMenu.component";
 import {SmallMenuComponent} from "./home-page/components/main-content-component/small-menu-component/small-menu.component";
+import {DialogPopupComponent} from "./home-page/components/main-content-component/spending-component/components/dialog-popup.component";
 //Shared components
 
 //Material components
@@ -31,14 +32,15 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatInputModule } from '@angular/material/input';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import {MatGridListModule} from "@angular/material/grid-list";
-
+import {MatDialogModule} from '@angular/material/dialog';
+// import {CdkTextareaAutosize} from '@angular/cdk/text-field';
 
 const sharedComponents = [
 ];
 
 import {AuthorizationService} from "./login-page/service/getUserData.service";
 import {MatSelectModule} from "@angular/material/select";
-import { NgxChartsModule } from '@swimlane/ngx-charts';
+import {NgxChartsModule} from '@swimlane/ngx-charts';
 
 const appComponents = [
   AppComponent,
@@ -53,7 +55,8 @@ const appComponents = [
   ReportComponent,
   MainContentComponent,
   BigMenuComponent,
-  SmallMenuComponent
+  SmallMenuComponent,
+  DialogPopupComponent
 ];
 
 const materialModules = [
@@ -62,8 +65,10 @@ const materialModules = [
   MatButtonModule,
   MatSidenavModule,
   MatInputModule,
-  MatSnackBarModule
-  ];
+  MatSnackBarModule,
+  MatDialogModule,
+  // CdkTextareaAutosize
+];
 
 @NgModule({
   declarations: [

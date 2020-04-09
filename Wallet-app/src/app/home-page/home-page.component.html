@@ -12,7 +12,9 @@
               position="start">
 
     <app-bigMenu
-      [@enterAnimation]>
+      [@enterAnimation]
+      [activePage]="activePage"
+      (activePageChange)="moveToPage($event)">
     </app-bigMenu>
   </mat-drawer>
 </mat-drawer-container>

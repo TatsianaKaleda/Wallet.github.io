@@ -1,19 +1,23 @@
 <section class="wlt-smallMenu">
   <div class="wlt-smallMenu-position">
     <div class="wlt-smallMenu-title">
-      <button (click)="openProFileWindow()">
+      <button (click)="moveToPage(navigationEnum.report)"
+              [class.active]="activePage === navigationEnum.report">
         <mat-icon>person</mat-icon>
       </button>
 
-      <button (click)="openProfitWindow()">
+      <button (click)="moveToPage(navigationEnum.spending)"
+              [class.active]="activePage === navigationEnum.spending">
         <mat-icon>add_circle_outline</mat-icon>
       </button>
 
-      <button (click)="openSpendingWindow()">
+      <button (click)="moveToPage(navigationEnum.budget)"
+              [class.active]="activePage === navigationEnum.budget">
         <mat-icon>remove_circle_outline</mat-icon>
       </button>
 
-      <button (click)="openReportWindow()" class= active>
+      <button (click)="moveToPage(navigationEnum.profits)"
+              [class.active]="activePage === navigationEnum.profits">
         <mat-icon>library_books</mat-icon>
       </button>
 

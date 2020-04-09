@@ -1,4 +1,5 @@
 import {Component, EventEmitter, Input, OnInit, Output} from "@angular/core";
+import {NavigationEnum} from "../../../../constants/navigation.enum";
 
 @Component({
   selector: 'app-small-menu',
@@ -7,33 +8,28 @@ import {Component, EventEmitter, Input, OnInit, Output} from "@angular/core";
 })
 export class SmallMenuComponent implements OnInit {
 
-  @Output()
-  showBigMenu = new EventEmitter<any>();
+  @Input()
+  public activePage: string;
 
-  public test: boolean = false;
+  @Output()
+  public showBigMenu = new EventEmitter<any>();
+  @Output()
+  public activePageChange: EventEmitter<any> = new EventEmitter<any>();
+
+  public navigationEnum = NavigationEnum;
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  public openProFileWindow(): void {
-    this.test = true;
-  }
-
-  public openProfitWindow(): void {
-    this.test = false;
-  }
-
-  public openSpendingWindow(): void {
-    this.test = false;
-  }
-
-  public openReportWindow(): void {
-    this.test = false;
+  public moveToPage(pageUrl: string): void {
+    this.activePage = pageUrl;
+    this.activePageChange.emit(pageUrl);
   }
 
   public openBigMenu(): void {
     this.showBigMenu.emit();
   }
+
 }

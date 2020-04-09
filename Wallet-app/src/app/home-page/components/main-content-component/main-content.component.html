@@ -1,5 +1,9 @@
 <section class="wlt-navigation">
-  <app-small-menu (showBigMenu)="showBigMenuEvent()"></app-small-menu>
+  <app-small-menu
+    [(activePage)]="activePage"
+    (activePageChange)="moveToPage($event)"
+    (showBigMenu)="showBigMenuEvent()">
+  </app-small-menu>
 </section>
 
 <section class="wlt-main">
@@ -11,5 +15,7 @@
     [user]="currentUser">
   </app-report>
 
-  <app-spending></app-spending>
+  <app-spending
+    *ngIf="activePage === navigationEnum.spending">
+  </app-spending>
 </section>

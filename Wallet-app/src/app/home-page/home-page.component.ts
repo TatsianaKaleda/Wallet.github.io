@@ -3,6 +3,7 @@ import {animate, style, transition, trigger} from "@angular/animations";
 import {CookieService} from "ngx-cookie-service";
 import {AuthorizationService} from "../login-page/service/getUserData.service";
 import {UserModel} from "../login-page/models/user.model";
+import {NavigationEnum} from "../constants/navigation.enum";
 
 @Component({
   selector: 'app-home-page',
@@ -25,12 +26,15 @@ import {UserModel} from "../login-page/models/user.model";
 })
 export class HomePageComponent implements OnInit {
 
-  public currentUser: UserModel[];
+  public currentUser: UserModel;
+  public navigationEnum = NavigationEnum;
+  public activePage: string;
 
   constructor(private cookieService: CookieService,
               private authorizationService: AuthorizationService) { }
 
   ngOnInit(): void {
+    this.activePage = this.navigationEnum.report;
     let email = this.cookieService.get("email");
     this.getCurrentUser(email);
   }
@@ -49,6 +53,10 @@ export class HomePageComponent implements OnInit {
           console.error('error caught in component') //ошибка на сервере
         }
       );
+  }
+
+  public moveToPage(pageUrl: string): void {
+    this.activePage = pageUrl;
   }
 
 }

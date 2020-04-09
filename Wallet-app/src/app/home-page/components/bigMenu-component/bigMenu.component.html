@@ -1,26 +1,34 @@
 <section class="wlt-bigMenu">
   <div class="wlt-bigMenu-position">
     <div class="wlt-bigMenu-title">
-      <button (click)="openProFileWindow()">
+      <button (click)="moveToPage(navigationEnum.report)"
+              [class.active]="activePage === navigationEnum.report">
         <mat-icon>person</mat-icon>
-        <p>Profile information</p>
+        Profile information
       </button>
 
-      <button (click)="openProfitWindow()" class="active">
+      <button (click)="moveToPage(navigationEnum.spending)"
+              [class.active]="activePage === navigationEnum.spending">
         <mat-icon>add_circle_outline</mat-icon>
-        <p>Add profit</p>
+        Add profit
       </button>
 
-
-      <button (click)="openSpendingWindow()">
+      <button (click)="moveToPage(navigationEnum.budget)"
+              [class.active]="activePage === navigationEnum.budget">
         <mat-icon>remove_circle_outline</mat-icon>
-        <p>Add spending</p>
+        Add spending
       </button>
 
-      <button (click)="openReportWindow()">
-        <mat-icon>library_books</mat-icon>
-        <p>See report</p>
+      <button (click)="moveToPage(navigationEnum.profits)"
+              [class.active]="activePage === navigationEnum.profits">
+        <mat-icon>remove_circle_outline</mat-icon>
+        Add spending
       </button>
+
+<!--      <button (click)="openReportWindow()">-->
+<!--        <mat-icon>library_books</mat-icon>-->
+<!--        See report-->
+<!--      </button>-->
     </div>
   </div>
 </section>
