@@ -45,7 +45,7 @@ export class HomePageComponent implements OnInit {
         (response) => {
           if (response) {
             if (response.length != 0) {
-              this.currentUser = response;
+              this.currentUser = response[0];
             }
           }
         },

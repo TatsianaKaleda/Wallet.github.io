@@ -1,0 +1,40 @@
+@import "src/assets/styles/main/colors";
+
+.wlt-profits {
+
+  &-category {
+    &-item {
+      width: 400px;
+      height: 200px;
+      margin-top: 40px;
+      transition: 0.3s;
+
+      &:hover {
+        background: $grey1-lite;
+
+        & .mat-button-wrapper {
+          color: $green1;
+        }
+
+        & .text-icon {
+          color: $green1;
+        }
+      }
+
+      & .mat-button-wrapper {
+        color: $grey1;
+      }
+
+      & .material-icons {
+        display: block;
+        font-size: 60px;
+      }
+
+      & .text-icon {
+        margin: 14px 0 0;
+        color: black;
+        letter-spacing: 1px;
+      }
+    }
+  }
+}

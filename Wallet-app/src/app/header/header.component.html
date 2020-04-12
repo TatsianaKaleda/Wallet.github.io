@@ -3,7 +3,8 @@
   <mat-toolbar>
     <mat-icon class="logo-icon">multiline_chart</mat-icon>
 
-    <button mat-button>
+    <button mat-button
+            (click)="moveToPage()">
       <mat-icon>person</mat-icon>
       {{userName}}
     </button>

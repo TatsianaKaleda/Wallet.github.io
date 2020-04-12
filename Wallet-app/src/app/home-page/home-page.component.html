@@ -1,7 +1,10 @@
 <mat-drawer-container class="home-page">
   <mat-drawer-content>
     <app-main-content
-      [currentUser]="currentUser ? currentUser[0] : null"
+      *ngIf="currentUser"
+      [currentUser]="currentUser"
+      [activePage]="activePage"
+      (activePageChange)="moveToPage($event)"
       (showBigMenu)="drawer.toggle()">
     </app-main-content>
   </mat-drawer-content>
@@ -10,7 +13,6 @@
               class="home-page-sidebar"
               [mode]="'over'"
               position="start">
-
     <app-bigMenu
       [@enterAnimation]
       [activePage]="activePage"

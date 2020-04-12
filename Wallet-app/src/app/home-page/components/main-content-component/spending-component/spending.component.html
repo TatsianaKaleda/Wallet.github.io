@@ -1,161 +1,29 @@
 <section class="wlt-spending">
   <div class="wlt-spending-title">
+    {{spendingValue}}
+    <br>
+    {{spendingDescription}}
     <div class="wlt-spending-title-category">
-      <button mat-stroked-button
-              class="food wlt-spending-title-category-item"
-              (click)="openDialog()">
-        <span class="material-icons">
-          local_grocery_store
-        </span>
-        <p class="text-icon">Food</p>
-      </button>
 
-      <button mat-stroked-button
-              class="sport wlt-spending-title-category-item"
-              (click)="openDialog()">
-        <span class="material-icons">
-          sports_handball
-        </span>
-        <p class="text-icon">Sport</p>
-      </button>
+      <ng-container *ngFor="let spending of currentUser.spending">
+        <button mat-stroked-button
+                class="food wlt-spending-title-category-item"
+                (click)="openDialog(spending.type)">
+          <span class="material-icons">
+            {{spending.icon}}
+          </span>
 
-      <button mat-stroked-button
-              class="home wlt-spending-title-category-item"
-              (click)="openDialog()">
-        <span class="material-icons">
-          house
-        </span>
-        <p class="text-icon">Home shoping</p>
-      </button>
-    </div>
-
-    <div class="wlt-spending-title-category">
-      <button mat-stroked-button
-              class="restauran wlt-spending-title-category-item"
-              (click)="openDialog()">
-        <span class="material-icons">
-          restaurant
-        </span>
-        <p class="text-icon">Restauran, cafe and els</p>
-      </button>
-
-      <button mat-stroked-button
-              class="pets wlt-spending-title-category-item"
-              (click)="openDialog()">
-        <span class="material-icons">
-          pets
-        </span>
-        <p class="text-icon">Pets</p>
-      </button>
-
-      <button mat-stroked-button
-              class="child wlt-spending-title-category-item"
-              (click)="openDialog()">
-        <span class="material-icons">
-          child_care
-        </span>
-        <p class="text-icon">Child care</p>
-      </button>
-    </div>
-
-    <div class="wlt-spending-title-category">
-      <button mat-stroked-button
-              class="traveling wlt-spending-title-category-item"
-              (click)="openDialog()">
-        <span class="material-icons">
-          beach_access
-        </span>
-        <p class="text-icon">Travelling</p>
-      </button>
-
-      <button mat-stroked-button
-              class="car wlt-spending-title-category-item"
-              (click)="openDialog()">
-        <span class="material-icons">
-          drive_eta
-        </span>
-        <p class="text-icon">Car</p>
-      </button>
-
-      <button mat-stroked-button
-              class="pharmacy wlt-spending-title-category-item"
-              (click)="openDialog()">
-        <span class="material-icons">
-          local_hospital
-        </span>
-        <p class="text-icon">Pharmacy</p>
-      </button>
-    </div>
-
-    <div class="wlt-spending-title-category">
-      <button mat-stroked-button
-              class="connection wlt-spending-title-category-item"
-              (click)="openDialog()">
-        <span class="material-icons">
-          phone_in_talk
-        </span>
-        <p class="text-icon">Connection</p>
-      </button>
-
-      <button mat-stroked-button
-              class="transport wlt-spending-title-category-item"
-              (click)="openDialog()">
-        <span class="material-icons">
-          departure_board
-        </span>
-        <p class="text-icon">Transport</p>
-      </button>
-
-      <button mat-stroked-button
-              class="fastfood wlt-spending-title-category-item"
-              (click)="openDialog()">
-        <span class="material-icons">
-          fastfood
-        </span>
-        <p class="text-icon">FastFood</p>
-      </button>
-    </div>
-
-    <div class="wlt-spending-title-category">
-<!--      <button mat-stroked-button-->
-<!--              class="shopping wlt-spending-title-category-item">-->
-<!--        <span class="material-icons">-->
-<!--          store_mall_directory-->
-<!--        </span>-->
-<!--        <form>-->
-<!--          <input type="number" step="0.01" min="0" placeholder="0,00">-->
-<!--          ₽-->
-<!--        </form>-->
-<!--        <p class="text-icon">Shopping</p>-->
-<!--      </button>-->
-
-<!--      <button mat-stroked-button-->
-<!--              class="shopping wlt-spending-title-category-item">-->
-<!--        <span class="material-icons">-->
-<!--          store_mall_directory-->
-<!--        </span>-->
-<!--        <form>-->
-<!--          <input type="number" step="0.01" min="0" placeholder="0,00">-->
-<!--          ₽-->
-<!--        </form>-->
-<!--      </button>-->
-
-<!--      <button mat-stroked-button-->
-<!--              class="shopping wlt-spending-title-category-item">-->
-<!--        <span class="material-icons">-->
-<!--          store_mall_directory-->
-<!--        </span>-->
-<!--        <form>-->
-<!--          <input type="number" step="0.01" min="0" placeholder="0,00">-->
-<!--          ₽-->
-<!--        </form>-->
-<!--      </button>-->
+          <p class="text-icon">
+            {{spending.name}}
+          </p>
+        </button>
+      </ng-container>
 
       <button mat-stroked-button
               class="add wlt-spending-title-category-item">
-        <span class="material-icons">
-          add
-        </span>
+          <span class="material-icons">
+            add
+          </span>
         <p class="text-icon">Add your category</p>
       </button>
     </div>

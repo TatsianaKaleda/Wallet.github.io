@@ -1,9 +1,12 @@
-<ngx-charts-advanced-pie-chart
-  [view]="view"
-  [scheme]="colorScheme"
-  [results]="single"
-  [gradient]="gradient"
-  (select)="onSelect($event)"
-  (activate)="onActivate($event)"
-  (deactivate)="onDeactivate($event)">
-</ngx-charts-advanced-pie-chart>
+<ng-container *ngIf="currentUser">
+  <div class="report-chart">
+    <ngx-charts-advanced-pie-chart
+      [scheme]="colorScheme"
+      [results]="currentUser.spending"
+      [gradient]="gradient"
+      (select)="onSelect($event)"
+      (activate)="onActivate($event)"
+      (deactivate)="onDeactivate($event)">
+    </ngx-charts-advanced-pie-chart>
+  </div>
+</ng-container>

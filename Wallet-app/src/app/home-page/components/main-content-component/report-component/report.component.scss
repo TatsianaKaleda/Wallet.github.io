@@ -1,3 +1,9 @@
 @import "src/assets/styles/main/colors";
-
-
+//app-report {
+//  display: block;
+//}
+.report-chart {
+  //display: flex; overflow: hidden;
+  display: grid;
+  margin-top: 100px;
+}

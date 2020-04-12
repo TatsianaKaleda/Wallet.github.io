@@ -8,14 +8,28 @@
 
 <section class="wlt-main">
   <app-header
-    [userName]="currentUser?.first_name">
+    [activePage]="activePage"
+    [userName]="currentUser?.first_name"
+    (activePageChange)="moveToPage($event)">
   </app-header>
 
   <app-report
-    [user]="currentUser">
+    *ngIf="activePage === navigationEnum.report"
+    [currentUser]="currentUser">
   </app-report>
 
+  <app-profits
+    *ngIf="activePage === navigationEnum.profits">
+  </app-profits>
+
   <app-spending
-    *ngIf="activePage === navigationEnum.spending">
+    *ngIf="activePage === navigationEnum.spending"
+    [currentUser]="currentUser">
   </app-spending>
+
+  <app-profile
+    *ngIf="activePage === navigationEnum.profile"
+    [currentUser]="currentUser">
+  </app-profile>
+
 </section>

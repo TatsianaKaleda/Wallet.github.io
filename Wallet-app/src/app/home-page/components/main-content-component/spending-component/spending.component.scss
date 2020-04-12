@@ -5,8 +5,15 @@
     &-category {
       display: flex;
       justify-content: center;
+      flex-wrap: wrap;
+
+      &:first-child {
+        margin-top: 40px;
+      }
+
       &-item {
-        width: 400px;
+        flex: 0 0 33.333%;
+        width: 33.333%;
         height: 200px;
         transition: 0.3s;
 
@@ -16,6 +23,7 @@
           & .mat-button-wrapper {
             color: $green1;
           }
+
           & .text-icon {
             color: $green1;
           }
@@ -69,7 +77,6 @@
       .mat-form-field-ripple {
         background-color: $white-lite;
       }
-
     }
   }
 }

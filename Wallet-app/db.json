@@ -8,12 +8,76 @@
       "email": "1",
       "spending": [
         {
+          "type": "food",
+          "icon": "local_grocery_store",
           "value": 5,
-          "name": "food"
+          "name": "Food"
         },
         {
+          "type": "sport",
+          "icon": "sports_handball",
           "value": 7,
-          "name": "clothes"
+          "name": "Sport"
+        },
+        {
+          "type": "home",
+          "icon": "house",
+          "value": 5,
+          "name": "Home shopping"
+        },
+        {
+          "type": "restaurant",
+          "icon": "restaurant",
+          "value": 7,
+          "name": "Restaurant, cafe and els"
+        },
+        {
+          "type": "pets",
+          "icon": "pets",
+          "value": 5,
+          "name": "Pets"
+        },
+        {
+          "type": "child",
+          "icon": "child_care",
+          "value": 7,
+          "name": "Child care"
+        },
+        {
+          "type": "traveling",
+          "icon": "beach_access",
+          "value": 5,
+          "name": "Travelling"
+        },
+        {
+          "type": "car",
+          "icon": "drive_eta",
+          "value": 7,
+          "name": "Car"
+        },
+        {
+          "type": "pharmacy",
+          "icon": "local_hospital",
+          "value": 5,
+          "name": "Pharmacy"
+        },
+        {
+          "type": "connection",
+          "icon": "phone_in_talk",
+          "value": 7,
+          "name": "Connection"
+        },
+        {
+          "type": "transport",
+          "icon": "departure_board",
+          "value": 5,
+          "name": "Transport"
+        },
+        {
+          "type": "fastfood",
+          "icon": "fastfood",
+          "value": 7,
+          "name": "FastFood"
         }
       ]
     },
@@ -25,12 +89,16 @@
       "email": " steve@codingthesmartway.com ",
       "spending": [
         {
+          "type": "sport",
+          "icon": "sports_handball",
           "value": 4,
-          "name": "sport"
+          "name": "Sport"
         },
         {
+          "type": "restaurant",
+          "icon": "restaurant",
           "value": 9,
-          "name": "cafe"
+          "name": "Restaurant, cafe and els"
         }
       ]
     },
@@ -42,12 +110,10 @@
       "email": "ann@codingthesmartway.com",
       "spending": [
         {
+          "type": "food",
+          "icon": "local_grocery_store",
           "value": 2,
-          "name": "clothes"
-        },
-        {
-          "value": 7,
-          "name": "food"
+          "name": "Food"
         }
       ]
     }

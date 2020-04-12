@@ -1,3 +1,5 @@
+@import "src/assets/styles/main/colors";
+
 .wlt-dialog-popup {
   &-title {
     font-size: 25px;
@@ -17,7 +19,59 @@
       background-color: rgba(0,0,0,0);
     }
     .mat-form-field-underline {
-      color: white;
+      color: $white;
     }
+
+    .spending-btn {
+      transition: 0.3s;
+
+      &.add-btn {
+        margin-right: 10px;
+      }
+
+      .mat-button-wrapper {
+        color: $grey1;
+      }
+
+      &:hover {
+        background: $grey1-lite;
+
+        .mat-button-wrapper {
+          color: $green1;
+        }
+      }
+    }
+
+    .spending-btn {
+      transition: 0.3s;
+
+      &.add-btn {
+        margin-right: 10px;
+      }
+
+      .mat-button-wrapper {
+        color: $grey1;
+      }
+
+      &:hover {
+        background: $grey1-lite;
+
+        .mat-button-wrapper {
+          color: $green1;
+        }
+      }
+    }
+  }
+
+  &-control {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+  }
+
+  &-control {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
   }
 }

@@ -1,4 +1,4 @@
-import {SpendingModel} from "./spendingModel";
+import {SpendingModel} from "./spending.model";
 
 export interface UserModel {
   id?: number;

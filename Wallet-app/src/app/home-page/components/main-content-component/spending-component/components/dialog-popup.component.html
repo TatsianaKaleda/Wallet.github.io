@@ -1,14 +1,71 @@
 <div class="wlt-dialog-popup">
-  <h1 class="wlt-dialog-popup-title">Spending name</h1>
+  <ng-container *ngIf="data.isSpending">
+  <h1 class="wlt-dialog-popup-title">
+    {{data.type}}
+  </h1>
+
   <form class="wlt-dialog-popup-form">
     <mat-form-field appearance="fill">
-      <mat-label>Amount</mat-label>
-      <input matInput type="number" class="example-right-align" step="0.10" min="0" placeholder="0,00">
-      <span matPrefix>$&nbsp;</span>
+      <mat-label>
+        Amount
+      </mat-label>
+
+      <input matInput
+             type="number"
+             class="example-right-align"
+             step="0.10"
+             min="0"
+             placeholder="0,00"
+             #spendingValue>
+
+      <span matPrefix>
+        $&nbsp;
+      </span>
     </mat-form-field>
-    <mat-form-field class="example-full-width">
-      <mat-label>Leave a comment</mat-label>
-      <textarea matInput placeholder="Ex. Oranges 2kg..."></textarea>
+
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>
+        Leave a comment
+      </mat-label>
+
+      <textarea matInput #spendingDescription></textarea>
     </mat-form-field>
+
+    <div class="wlt-dialog-popup-control">
+      <button mat-stroked-button
+              class="spending-btn add-btn"
+              [mat-dialog-close]="[spendingValue.value, spendingDescription.value]">
+        Add
+      </button>
+
+      <button mat-stroked-button
+              class="spending-btn"
+              (click)="closePopup()">
+        Cancel
+      </button>
+    </div>
   </form>
+  </ng-container>
+  <ng-container *ngIf="data.profits">
+    <form class="wlt-dialog-popup-form">
+      <mat-form-field>
+        <mat-label>Add your profit, please</mat-label>
+        <mat-select required>
+          <mat-option *ngFor="let profit of data.profits" [value]="profit.name">
+            {{profit.name}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>
+          Amount
+        </mat-label>
+        <input matInput type="number" class="example-right-align" step="0.10" min="0" placeholder="0,00">
+        <span matPrefix>
+          $&nbsp;
+        </span>
+      </mat-form-field>
+    </form>
+  </ng-container>
 </div>

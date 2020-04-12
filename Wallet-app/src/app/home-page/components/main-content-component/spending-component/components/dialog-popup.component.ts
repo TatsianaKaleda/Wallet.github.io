@@ -1,17 +1,37 @@
-import { Component, NgZone, ViewChild } from '@angular/core';
-// import {CdkTextareaAutosize} from '@angular/cdk/text-field';
-import {take} from 'rxjs/operators';
+import {Component, Inject, NgZone} from '@angular/core';
+import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
+import { ProfitsModel } from 'src/app/login-page/models/profits.model';
+
+export interface DialogData {
+  type?: string;
+  spendingValue?: number;
+  spendingDescription?: string;
+  isSpending?: boolean;
+  profits?: ProfitsModel
+}
 
 @Component({
   selector: 'app-dialog-popup',
   templateUrl: './dialog-popup.component.html',
   styleUrls: ['./dialog-popup.component.scss']
-  // template: `
-  //   <h1>Hello world</h1>
-  // `
 })
-export class DialogPopupComponent {
-  constructor(private _ngZone: NgZone) {}
 
-  // @ViewChild('autosize') autosize: CdkTextareaAutosize;
+export class DialogPopupComponent {
+
+  public spendingValue: number;
+  public spendingDescription: string;
+
+  constructor(private _ngZone: NgZone,
+              public dialogRef: MatDialogRef<DialogPopupComponent>,
+              @Inject(MAT_DIALOG_DATA) public data: DialogData) {
+  }
+
+  public addSpending(type: string, spendingValue: string, spendingDescription: string): void {
+    console.log(+spendingValue);
+    console.log(spendingDescription);
+  }
+
+  public closePopup(): void {
+    this.dialogRef.close();
+  }
 }
