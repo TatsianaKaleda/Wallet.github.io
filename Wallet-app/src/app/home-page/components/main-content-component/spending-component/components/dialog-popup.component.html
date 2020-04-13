@@ -46,6 +46,8 @@
     </div>
   </form>
   </ng-container>
+
+
   <ng-container *ngIf="data.profits">
     <form class="wlt-dialog-popup-form">
       <mat-form-field>
@@ -61,11 +63,34 @@
         <mat-label>
           Amount
         </mat-label>
-        <input matInput type="number" class="example-right-align" step="0.10" min="0" placeholder="0,00">
-        <span matPrefix>
+
+        <input matInput
+               type="number"
+               class="example-right-align"
+               step="0.10"
+               min="0"
+               placeholder="0,00">
+               // #profitValue>
+
+          <span matPrefix>
           $&nbsp;
         </span>
+
       </mat-form-field>
+
+<!--      <div class="wlt-dialog-popup-control">-->
+<!--        <button mat-stroked-button-->
+<!--                class="spending-btn add-btn"-->
+<!--                [mat-dialog-close]="[profitValue.value, profit.name]">-->
+<!--          Add-->
+<!--        </button>-->
+
+<!--        <button mat-stroked-button-->
+<!--                class="profits-btn"-->
+<!--                (click)="closePopup()">-->
+<!--          Cancel-->
+<!--        </button>-->
+<!--      </div>-->
     </form>
   </ng-container>
 </div>

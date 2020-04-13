@@ -26,7 +26,8 @@ export class SpendingComponent {
       data: {
         type: type,
         spendingValue: this.spendingValue,
-        spendingDescription: this.spendingDescription
+        spendingDescription: this.spendingDescription,
+        isSpending: true
       }
     });
 

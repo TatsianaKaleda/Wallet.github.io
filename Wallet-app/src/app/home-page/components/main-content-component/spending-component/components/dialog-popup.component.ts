@@ -30,8 +30,13 @@ export class DialogPopupComponent {
     console.log(+spendingValue);
     console.log(spendingDescription);
   }
+  // public addProfit(type: string, profitValue: string, profitDescription: string): void {
+  //   console.log(+profitValue);
+  //   console.log(profitDescription);
+  // }
 
   public closePopup(): void {
     this.dialogRef.close();
   }
+
 }

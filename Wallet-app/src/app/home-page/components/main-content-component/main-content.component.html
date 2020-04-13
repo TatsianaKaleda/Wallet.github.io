@@ -8,7 +8,7 @@
 
 <section class="wlt-main">
   <app-header
-    [activePage]="activePage"
+    [(activePage)]="activePage"
     [userName]="currentUser?.first_name"
     (activePageChange)="moveToPage($event)">
   </app-header>

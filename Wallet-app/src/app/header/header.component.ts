@@ -17,7 +17,7 @@ export class HeaderComponent implements OnInit {
   public activePageChange: EventEmitter<any> = new EventEmitter<any>();
 
   public navigationEnum = NavigationEnum;
-  public showProfile: boolean;
+
 
   constructor() { }
 
