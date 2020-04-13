@@ -93,4 +93,64 @@
 <!--      </div>-->
     </form>
   </ng-container>
+
+  <ng-container *ngIf="data.isProfileFirstName">
+    <h1 class="wlt-dialog-popup-title">
+      {{data.profileItem}}
+    </h1>
+
+    <form class="wlt-dialog-popup-form">
+      <mat-form-field appearance="fill">
+<!--        <mat-label>-->
+<!--          Your first name:-->
+<!--        </mat-label>-->
+
+        <input matInput
+               placeholder="Enter your new first name">
+      </mat-form-field>
+
+      <div class="wlt-dialog-popup-control">
+        <button mat-stroked-button
+                class="profile-btn add-btn">
+          Save
+        </button>
+
+        <button mat-stroked-button
+                class="profile-btn"
+                (click)="closePopup()">
+          Cancel
+        </button>
+      </div>
+    </form>
+  </ng-container>
+
+  <ng-container *ngIf="data.isProfileLastName">
+    <h1 class="wlt-dialog-popup-title">
+      {{data.profileItem}}
+    </h1>
+
+    <form class="wlt-dialog-popup-form">
+      <mat-form-field appearance="fill">
+        <!--        <mat-label>-->
+        <!--          Your last name:-->
+        <!--        </mat-label>-->
+
+        <input matInput
+               placeholder="Enter your new last name">
+      </mat-form-field>
+
+      <div class="wlt-dialog-popup-control">
+        <button mat-stroked-button
+                class="profile-btn add-btn">
+          Save
+        </button>
+
+        <button mat-stroked-button
+                class="profile-btn"
+                (click)="closePopup()">
+          Cancel
+        </button>
+      </div>
+    </form>
+  </ng-container>
 </div>

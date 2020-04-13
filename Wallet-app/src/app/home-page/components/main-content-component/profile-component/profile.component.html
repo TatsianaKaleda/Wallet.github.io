@@ -3,34 +3,40 @@
     <h3 class="wlt-profile-title">
       Your profile
     </h3>
-    <div class="wlt-profile-form">
-      <p class="wlt-profile-form-name">Your first name: {{currentUser.first_name}}</p>
-<!--      <mat-form-field class="example-full-width">-->
-<!--        <mat-label class="wlt-profile-form-label">-->
-<!--          {{currentUser.first_name}}-->
-<!--        </mat-label>-->
-<!--      </mat-form-field>-->
-
-<!--      <p class="wlt-profile-form-name">Your last name:</p>-->
-<!--      <mat-form-field class="example-full-width">-->
-<!--        <mat-label class="wlt-profile-form-label">-->
-<!--          {{currentUser.last_name}}-->
-<!--        </mat-label>-->
-<!--      </mat-form-field>-->
-
-<!--      <p class="wlt-profile-form-name">Your email:</p>-->
-<!--      <mat-form-field class="example-full-width">-->
-<!--        <mat-label class="wlt-profile-form-label">-->
-<!--          {{currentUser.email}}-->
-<!--        </mat-label>-->
-<!--      </mat-form-field>-->
-
-<!--      <mat-form-field class="example-full-width">-->
-<!--        <mat-label class="wlt-profile-form-label">-->
-<!--          {{currentUser.spending}}-->
-<!--        </mat-label>-->
-<!--      </mat-form-field>-->
-
+    <div class="wlt-profile-info">
+      <p class="wlt-profile-info-item">
+        Your first name:
+        <span class="wlt-profile-info-name">
+          {{currentUser.first_name}}
+        </span>
+        <button mat-stroked-button
+                class="change wlt-profile-btn"
+                (click)="openChangeFirstName('Your first name')">
+          <span class="material-icons">
+            create
+          </span>
+        </button>
+      </p>
+      <p class="wlt-profile-info-item">
+        Your last name:
+        <span class="wlt-profile-info-name">
+          {{currentUser.last_name}}
+        </span>
+        <button mat-stroked-button
+                class="change wlt-profile-btn"
+                (click)="openChangeLastName('Your last name')">
+          <span class="material-icons">
+            create
+          </span>
+        </button>
+      </p>
+      <p class="wlt-profile-info-item">
+        Your email:
+        <span class="wlt-profile-info-name">
+          {{currentUser.email}}
+        </span>
+      </p>
     </div>
+
   </div>
 </section>

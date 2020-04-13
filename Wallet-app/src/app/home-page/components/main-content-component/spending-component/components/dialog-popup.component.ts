@@ -3,11 +3,15 @@ import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
 import { ProfitsModel } from 'src/app/login-page/models/profits.model';
 
 export interface DialogData {
+
   type?: string;
   spendingValue?: number;
   spendingDescription?: string;
   isSpending?: boolean;
-  profits?: ProfitsModel
+  profits?: ProfitsModel;
+  isProfileFirstName?: boolean;
+  isProfileLastName?: boolean;
+  profileItem: string;
 }
 
 @Component({
