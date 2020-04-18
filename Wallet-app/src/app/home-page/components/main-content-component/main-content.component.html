@@ -19,7 +19,8 @@
   </app-report>
 
   <app-profits
-    *ngIf="activePage === navigationEnum.profits">
+    *ngIf="activePage === navigationEnum.profits"
+    [currentUser]="currentUser">
   </app-profits>
 
   <app-spending

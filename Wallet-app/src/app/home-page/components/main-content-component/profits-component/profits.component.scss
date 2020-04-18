@@ -1,8 +1,10 @@
 @import "src/assets/styles/main/colors";
 
 .wlt-profits {
-
   &-category {
+    text-align: center;
+    margin: 32px;
+
     &-item {
       width: 400px;
       height: 200px;
@@ -12,28 +14,64 @@
       &:hover {
         background: $grey1-lite;
 
-        & .mat-button-wrapper {
+        .mat-button-wrapper {
           color: $green1;
         }
 
-        & .text-icon {
+        .text-icon {
           color: $green1;
         }
       }
 
-      & .mat-button-wrapper {
+      .mat-button-wrapper {
         color: $grey1;
       }
 
-      & .material-icons {
+      .material-icons {
         display: block;
         font-size: 60px;
       }
 
-      & .text-icon {
+      .text-icon {
         margin: 14px 0 0;
         color: black;
         letter-spacing: 1px;
+      }
+    }
+  }
+
+  &__title {
+    text-align: center;
+    text-transform: uppercase;
+    background: $grey1-lite;
+    color: $white;
+    padding: 10px;
+
+    &-value {
+      font-weight: 100;
+      font-size: 22px;
+    }
+  }
+
+  &__item {
+    width: 97%;
+    margin: 70px auto;
+
+    &-title {
+      font-weight: 100;
+    }
+
+    .mat-header-cell, .mat-cell {
+      width: 30%;
+      text-align: center;
+    }
+
+    .mat-table {
+      margin: 0 auto;
+      width: 100%;
+
+      .mat-header-cell {
+        text-transform: uppercase;
       }
     }
   }

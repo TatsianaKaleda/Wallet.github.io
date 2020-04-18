@@ -4,25 +4,28 @@
   margin-top: 40px;
 
   &-position {
-    width: 800px;
-    height: 100vh;
-    background-color: $green1;
-    margin: 0 auto;
-
+    padding: 20px;
+    width: 70%;
+    background-color: $grey1-lite;
+    margin: 100px auto;
   }
+
   &-title {
-    padding-top: 30px;
-      font-size: 40px;
-      font-weight: 100;
-      text-align: center;
+    margin: 30px 0;
+    text-transform: uppercase;
+    font-size: 22px;
+    font-weight: 100;
+    text-align: center;
+    color: $white;
   }
 
   &-info {
     margin-left: 30px;
+
     &-item {
       font-size: 16px;
       font-weight: 100;
-      color: $grey1;
+      color: $white;
     }
 
     &-name {
@@ -33,10 +36,9 @@
   }
 
   &-btn {
+    border: none;
 
     &:hover {
-      background: $grey1-lite;
-
       & .mat-button-wrapper {
         color: $green1;
       }
@@ -46,6 +48,5 @@
       padding: 5px;
       font-size: 18px;
     }
-
   }
 }

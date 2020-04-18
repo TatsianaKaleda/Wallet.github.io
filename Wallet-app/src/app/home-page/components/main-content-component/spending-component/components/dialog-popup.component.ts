@@ -1,17 +1,20 @@
-import {Component, Inject, NgZone} from '@angular/core';
+import {Component, Inject, NgZone, OnInit} from '@angular/core';
 import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
-import { ProfitsModel } from 'src/app/login-page/models/profits.model';
+import {SpendingIconsModel} from 'src/app/models/spending-icons.model';
+import {ProfitTypesModel} from "../../../../../models/profit-types.model";
+
 
 export interface DialogData {
-
   type?: string;
   spendingValue?: number;
   spendingDescription?: string;
   isSpending?: boolean;
-  profits?: ProfitsModel;
-  isProfileFirstName?: boolean;
-  isProfileLastName?: boolean;
-  profileItem: string;
+  profits?: ProfitTypesModel[];
+  isProfile?: boolean;
+  isNewSpending?: boolean;
+  profileItem?: string;
+  profileValue?: string;
+  spendingIcons?: SpendingIconsModel;
 }
 
 @Component({
@@ -22,22 +25,14 @@ export interface DialogData {
 
 export class DialogPopupComponent {
 
-  public spendingValue: number;
-  public spendingDescription: string;
+  public selected: any;
 
   constructor(private _ngZone: NgZone,
               public dialogRef: MatDialogRef<DialogPopupComponent>,
               @Inject(MAT_DIALOG_DATA) public data: DialogData) {
   }
 
-  public addSpending(type: string, spendingValue: string, spendingDescription: string): void {
-    console.log(+spendingValue);
-    console.log(spendingDescription);
-  }
-  // public addProfit(type: string, profitValue: string, profitDescription: string): void {
-  //   console.log(+profitValue);
-  //   console.log(profitDescription);
-  // }
+  ngOnInit(): void {}
 
   public closePopup(): void {
     this.dialogRef.close();

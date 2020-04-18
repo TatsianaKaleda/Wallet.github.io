@@ -1,0 +1,48 @@
+@import "src/assets/styles/main/colors";
+
+.wlt-page-not-found {
+  & header {
+    z-index: 5464;
+  }
+  &-position {
+    text-align: center;
+    min-height: 100vh;
+    background: $white-lite;
+  }
+
+  &-bg {
+    display: inline-block;
+    margin-top: 60px;
+    width: 350px;
+    height: 350px;
+    background-size: contain;
+    background: url("src/assets/images/404.png") no-repeat center;
+  }
+
+  &-text {
+    &-title {
+      display: inline-block;
+      margin-top: 320px;
+      margine-bottom: 0;
+      text-align: center;
+      color: $grey2;
+      font-size: 30px;
+      font-weight: 100;
+    }
+  }
+  &-btn {
+    background: $green1;
+  }
+  .mat-button-wrapper {
+    background-color: $green1;
+    font-size: 18px;
+    font-weight: 100;
+    color: $green4;
+
+    :hover {
+      color: $white-lite;
+      background: $green4;
+    }
+  }
+}
+

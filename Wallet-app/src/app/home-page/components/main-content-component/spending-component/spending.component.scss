@@ -6,6 +6,9 @@
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
+      margin-top: 20px;
+      width: 100%;
+      max-width: 600px;
 
       &:first-child {
         margin-top: 40px;
@@ -42,6 +45,7 @@
           margin: 14px 0 0;
           color: black;
           letter-spacing: 1px;
+          white-space: pre-wrap;
         }
 
         & .example-container .mat-form-field + .mat-form-field {
@@ -76,6 +80,33 @@
 
       .mat-form-field-ripple {
         background-color: $white-lite;
+      }
+    }
+  }
+
+  &-history {
+    .mat-table {
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    &__item {
+      width: 97%;
+      margin: 70px auto;
+
+      &-title {
+        font-weight: 100;
+      }
+
+      .mat-table {
+        .mat-header-cell, .mat-cell {
+          width: 30%;
+          text-align: center;
+        }
+
+        .mat-header-cell {
+          text-transform: uppercase;
+        }
       }
     }
   }

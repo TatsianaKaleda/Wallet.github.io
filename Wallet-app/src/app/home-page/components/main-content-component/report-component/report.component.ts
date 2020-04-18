@@ -1,18 +1,21 @@
-import {Component, NgModule, Input} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {UserModel} from "../../../../login-page/models/user.model";
 
 @Component({
   selector: 'app-report',
   templateUrl: './report.component.html',
-  styleUrls: ['./report.component.scss']
+  styleUrls: ['./report.component.scss'],
+  host: {
+    "[class.wlt-report-container]": "true"
+  }
 })
-export class ReportComponent {
+
+export class ReportComponent implements OnInit {
 
   @Input()
   public currentUser: UserModel;
 
-  showLegend = true;
-  gradient: boolean = true;
+  public gradient: boolean = true;
 
   colorScheme = {
     domain: [
@@ -33,6 +36,9 @@ export class ReportComponent {
   };
 
   constructor() {
+  }
+
+  ngOnInit(): void {
   }
 
   onSelect(data): void {

@@ -14,15 +14,15 @@ import {WelcomeComponent} from './login-page/components/welcome-component/welcom
 import {SignInComponent} from './login-page/components/signin-component/signin.component';
 import {SignUpComponent} from './login-page/components/signup-component/signup.component';
 import {HomePageComponent} from './home-page/home-page.component';
-import {BudgetComponent} from './home-page/components/main-content-component/budget-component/budget.component';
 import {ProfitsComponent} from './home-page/components/main-content-component/profits-component/profits.component';
 import {SpendingComponent} from './home-page/components/main-content-component/spending-component/spending.component';
 import {ReportComponent} from './home-page/components/main-content-component/report-component/report.component';
-import { MainContentComponent } from "./home-page/components/main-content-component/main-content.component";
-import { BigMenuComponent } from "./home-page/components/bigMenu-component/bigMenu.component";
-import { SmallMenuComponent } from "./home-page/components/main-content-component/small-menu-component/small-menu.component";
-import { DialogPopupComponent } from "./home-page/components/main-content-component/spending-component/components/dialog-popup.component";
-import { ProfileComponent } from "./home-page/components/main-content-component/profile-component/profile.component";
+import {MainContentComponent} from "./home-page/components/main-content-component/main-content.component";
+import {BigMenuComponent} from "./home-page/components/bigMenu-component/bigMenu.component";
+import {SmallMenuComponent} from "./home-page/components/main-content-component/small-menu-component/small-menu.component";
+import {DialogPopupComponent} from "./home-page/components/main-content-component/spending-component/components/dialog-popup.component";
+import {ProfileComponent} from "./home-page/components/main-content-component/profile-component/profile.component";
+import {PageNotFoundComponent} from "./models/page-not-found-component/page-not-found.component";
 //Shared components
 
 //Material components
@@ -32,15 +32,19 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatInputModule} from '@angular/material/input';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
-import { MatGridListModule } from "@angular/material/grid-list";
-import { MatDialogModule } from '@angular/material/dialog';
+import {MatGridListModule} from "@angular/material/grid-list";
+import {MatDialogModule} from '@angular/material/dialog';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatTableModule} from '@angular/material/table';
 
-const sharedComponents = [
-];
+const sharedComponents = [];
 
 import {AuthorizationService} from "./login-page/service/getUserData.service";
 import {AddSpendingService} from "./home-page/components/main-content-component/spending-component/service/addSpending.service";
+import {GetSpendingIconsService} from "./home-page/components/main-content-component/spending-component/service/getSpendingIcons.service";
+import {GetProfitTypesService} from "./home-page/components/main-content-component/profits-component/service/getProfitTypes.service";
+import {AddProfitService} from "./home-page/components/main-content-component/profits-component/service/addProfit.service";
+import {ChangePersonalDataService} from "./home-page/components/main-content-component/profile-component/service/changePersonalData.service";
 import {MatSelectModule} from "@angular/material/select";
 import {NgxChartsModule} from '@swimlane/ngx-charts';
 
@@ -51,7 +55,6 @@ const appComponents = [
   WelcomeComponent,
   SignInComponent,
   SignUpComponent,
-  BudgetComponent,
   ProfitsComponent,
   SpendingComponent,
   ReportComponent,
@@ -59,7 +62,8 @@ const appComponents = [
   BigMenuComponent,
   SmallMenuComponent,
   DialogPopupComponent,
-  ProfileComponent
+  ProfileComponent,
+  PageNotFoundComponent
 ];
 
 const materialModules = [
@@ -70,7 +74,17 @@ const materialModules = [
   MatInputModule,
   MatSnackBarModule,
   MatDialogModule,
-  MatFormFieldModule
+  MatFormFieldModule,
+  MatTableModule
+];
+
+const appServices = [
+  AuthorizationService,
+  AddSpendingService,
+  ChangePersonalDataService,
+  GetSpendingIconsService,
+  GetProfitTypesService,
+  AddProfitService
 ];
 
 @NgModule({
@@ -79,20 +93,26 @@ const materialModules = [
     ...appComponents,
     HomePageComponent
   ],
-    imports: [
-        ...materialModules,
-        BrowserModule,
-        AppRoutingModule,
-        BrowserAnimationsModule,
-        ReactiveFormsModule,
-        FormsModule,
-        HttpClientModule,
-        MatSelectModule,
-        NgxChartsModule,
-        MatGridListModule
+  imports: [
+    ...materialModules,
+    BrowserModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    ReactiveFormsModule,
+    FormsModule,
+    HttpClientModule,
+    MatSelectModule,
+    NgxChartsModule,
+    MatGridListModule
 
-    ],
-  providers: [AuthorizationService, AddSpendingService],
-  bootstrap: [AppComponent]
+  ],
+  providers: [
+    ...appServices
+  ],
+  bootstrap: [
+    AppComponent
+  ]
 })
-export class AppModule { }
+
+export class AppModule {
+}

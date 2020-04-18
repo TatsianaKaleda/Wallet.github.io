@@ -1,59 +1,124 @@
 <div class="wlt-dialog-popup">
+
+  <!--  SPENDING POPUP-->
   <ng-container *ngIf="data.isSpending">
-  <h1 class="wlt-dialog-popup-title">
-    {{data.type}}
-  </h1>
+    <h1 class="wlt-dialog-popup-title">
+      {{data.type}}
+    </h1>
 
-  <form class="wlt-dialog-popup-form">
-    <mat-form-field appearance="fill">
-      <mat-label>
-        Amount
-      </mat-label>
+    <form class="wlt-dialog-popup-form">
+      <mat-form-field appearance="fill">
+        <mat-label>
+          Amount
+        </mat-label>
 
-      <input matInput
-             type="number"
-             class="example-right-align"
-             step="0.10"
-             min="0"
-             placeholder="0,00"
-             #spendingValue>
+        <input matInput
+               type="number"
+               class="example-right-align"
+               step="0.10"
+               min="0"
+               placeholder="0,00"
+               #spendingValue>
 
-      <span matPrefix>
-        $&nbsp;
-      </span>
-    </mat-form-field>
+        <span matPrefix>
+          $&nbsp;
+        </span>
+      </mat-form-field>
 
-    <mat-form-field class="example-full-width" appearance="fill">
-      <mat-label>
-        Leave a comment
-      </mat-label>
+      <mat-form-field class="example-full-width"
+                      appearance="fill">
+        <mat-label>
+          Leave a comment
+        </mat-label>
 
-      <textarea matInput #spendingDescription></textarea>
-    </mat-form-field>
+        <textarea matInput #spendingDescription></textarea>
+      </mat-form-field>
 
-    <div class="wlt-dialog-popup-control">
-      <button mat-stroked-button
-              class="spending-btn add-btn"
-              [mat-dialog-close]="[spendingValue.value, spendingDescription.value]">
-        Add
-      </button>
+      <div class="wlt-dialog-popup-control">
+        <button mat-stroked-button
+                class="control-btn add-btn"
+                [mat-dialog-close]="[spendingValue.value, spendingDescription.value]">
+          Add
+        </button>
 
-      <button mat-stroked-button
-              class="spending-btn"
-              (click)="closePopup()">
-        Cancel
-      </button>
-    </div>
-  </form>
+        <button mat-stroked-button
+                class="control-btn"
+                (click)="closePopup()">
+          Cancel
+        </button>
+      </div>
+    </form>
   </ng-container>
 
 
+  <!--  ADD SPENDING CATEGORY POPUP-->
+  <ng-container *ngIf="data.isNewSpending && data.spendingIcons">
+    <h1 class="wlt-dialog-popup-title">
+      Add new spending category
+    </h1>
+
+    <div class="example-container">
+      <form class="wlt-dialog-popup-form">
+        <mat-form-field class="new-spending-category">
+          <mat-select placeholder="Select icon"
+                      [(value)]="selected">
+            <mat-select-trigger>
+              <mat-icon>
+                {{selected}}
+              </mat-icon>
+            </mat-select-trigger>
+
+            <mat-option *ngFor="let icon of data.spendingIcons[0].data"
+                        [value]="icon.icon">
+              <i class="material-icons visibility"
+                 matSuffix>
+                {{icon.icon}}
+              </i>
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field class="new-spending-category"
+                        appearance="fill">
+          <input matInput
+                 placeholder="Enter your new first name"
+                 #newSpendingName>
+        </mat-form-field>
+
+        <div class="wlt-dialog-popup-control">
+          <button mat-stroked-button
+                  class="control-btn add-btn"
+                  [mat-dialog-close]="[newSpendingName.value, selected]">
+            Save
+          </button>
+
+          <button mat-stroked-button
+                  class="control-btn"
+                  (click)="closePopup()">
+            Cancel
+          </button>
+        </div>
+      </form>
+    </div>
+  </ng-container>
+
+
+  <!--  PROFITS POPUP-->
   <ng-container *ngIf="data.profits">
+    <h1 class="wlt-dialog-popup-title">
+      Add profit
+    </h1>
+
     <form class="wlt-dialog-popup-form">
       <mat-form-field>
-        <mat-label>Add your profit, please</mat-label>
-        <mat-select required>
-          <mat-option *ngFor="let profit of data.profits" [value]="profit.name">
+        <mat-select placeholder="Select your profit, please"
+                    [(value)]="selected">
+          <mat-select-trigger>
+            {{selected}}
+          </mat-select-trigger>
+
+          <mat-option *ngFor="let profit of data.profits[0].data"
+                      [value]="profit.name">
             {{profit.name}}
           </mat-option>
         </mat-select>
@@ -69,54 +134,30 @@
                class="example-right-align"
                step="0.10"
                min="0"
-               placeholder="0,00">
-               // #profitValue>
+               placeholder="0,00"
+               #profitValue>
 
-          <span matPrefix>
+        <span matPrefix>
           $&nbsp;
         </span>
-
       </mat-form-field>
 
-<!--      <div class="wlt-dialog-popup-control">-->
-<!--        <button mat-stroked-button-->
-<!--                class="spending-btn add-btn"-->
-<!--                [mat-dialog-close]="[profitValue.value, profit.name]">-->
-<!--          Add-->
-<!--        </button>-->
+      <mat-form-field class="example-full-width"
+                      appearance="fill">
+        <mat-label>Leave a comment</mat-label>
 
-<!--        <button mat-stroked-button-->
-<!--                class="profits-btn"-->
-<!--                (click)="closePopup()">-->
-<!--          Cancel-->
-<!--        </button>-->
-<!--      </div>-->
-    </form>
-  </ng-container>
-
-  <ng-container *ngIf="data.isProfileFirstName">
-    <h1 class="wlt-dialog-popup-title">
-      {{data.profileItem}}
-    </h1>
-
-    <form class="wlt-dialog-popup-form">
-      <mat-form-field appearance="fill">
-<!--        <mat-label>-->
-<!--          Your first name:-->
-<!--        </mat-label>-->
-
-        <input matInput
-               placeholder="Enter your new first name">
+        <textarea matInput #profitDescription></textarea>
       </mat-form-field>
 
       <div class="wlt-dialog-popup-control">
         <button mat-stroked-button
-                class="profile-btn add-btn">
+                class="control-btn add-btn"
+                [mat-dialog-close]="[profitValue.value, selected, profitDescription.value]">
           Save
         </button>
 
         <button mat-stroked-button
-                class="profile-btn"
+                class="control-btn"
                 (click)="closePopup()">
           Cancel
         </button>
@@ -124,29 +165,30 @@
     </form>
   </ng-container>
 
-  <ng-container *ngIf="data.isProfileLastName">
+
+  <!--  PROFILE POPUP-->
+  <ng-container *ngIf="data.isProfile">
     <h1 class="wlt-dialog-popup-title">
-      {{data.profileItem}}
+      {{data?.profileItem}}
     </h1>
 
     <form class="wlt-dialog-popup-form">
       <mat-form-field appearance="fill">
-        <!--        <mat-label>-->
-        <!--          Your last name:-->
-        <!--        </mat-label>-->
-
         <input matInput
-               placeholder="Enter your new last name">
+               placeholder="Enter your new first name"
+               [value]="data?.profileValue"
+               #profileValue>
       </mat-form-field>
 
       <div class="wlt-dialog-popup-control">
         <button mat-stroked-button
-                class="profile-btn add-btn">
+                class="control-btn add-btn"
+                [mat-dialog-close]="[profileValue.value, data?.profileItem]">
           Save
         </button>
 
         <button mat-stroked-button
-                class="profile-btn"
+                class="control-btn"
                 (click)="closePopup()">
           Cancel
         </button>

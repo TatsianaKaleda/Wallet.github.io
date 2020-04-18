@@ -42,7 +42,7 @@
       }
     }
 
-    .spending-btn {
+    .control-btn {
       transition: 0.3s;
 
       &.add-btn {
@@ -72,6 +72,17 @@
   &-control {
     display: flex;
     justify-content: flex-end;
+    width: 100%;
+  }
+
+  &-control {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+  }
+
+  & .new-spending-category {
+    flex: 0 0 100%;
     width: 100%;
   }
 }

@@ -1,4 +1,10 @@
 <section class="wlt-profits">
+  <div class="page-title">
+    <h2 class="page-title-value">
+      Profits
+    </h2>
+  </div>
+
   <div class="wlt-profits-category">
       <button mat-stroked-button
               class="add wlt-profits-category-item"
@@ -6,7 +12,50 @@
         <span class="material-icons">
           add
         </span>
-        <p class="text-icon">Add your category of profit</p>
+
+        <span class="text-icon">
+          Add your category of profit
+        </span>
       </button>
   </div>
+
+  <div class="wlt-profits__title">
+    <h2 class="wlt-profits__title-value">
+      Profits history
+    </h2>
+  </div>
+
+  <ng-container *ngFor="let profit of profits">
+    <section class="wlt-profits__item"
+             *ngIf="profit?.profitHistory?.length > 0">
+      <h2 class="wlt-profits__item-title">
+        {{profit.name}}:
+      </h2>
+
+      <table mat-table [dataSource]="profit.profitHistory" class="mat-elevation-z8">
+        <ng-container matColumnDef="position">
+          <th mat-header-cell *matHeaderCellDef> No. </th>
+          <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="value">
+          <th mat-header-cell *matHeaderCellDef> value </th>
+          <td mat-cell *matCellDef="let element"> {{element.value}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="description">
+          <th mat-header-cell *matHeaderCellDef> description </th>
+          <td mat-cell *matCellDef="let element"> {{element.description}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="date">
+          <th mat-header-cell *matHeaderCellDef> date </th>
+          <td mat-cell *matCellDef="let element"> {{element.date | date:'longDate'}} </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+    </section>
+  </ng-container>
 </section>

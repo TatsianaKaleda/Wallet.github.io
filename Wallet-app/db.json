@@ -2,7 +2,7 @@
   "employee": [
     {
       "id": 1,
-      "first_name": "Sebastian",
+      "first_name": "Eschweil",
       "last_name": "Eschweiler",
       "password": "1",
       "email": "1",
@@ -11,7 +11,29 @@
           "type": "food",
           "icon": "local_grocery_store",
           "value": 5,
-          "name": "Food"
+          "name": "Food",
+          "spendingHistory": [
+            {
+              "value": 11,
+              "description": "test",
+              "date": 1586810605560
+            },
+            {
+              "value": 1,
+              "description": "test1",
+              "date": 1586810615543
+            },
+            {
+              "value": 13,
+              "description": "test2",
+              "date": 1586810624856
+            },
+            {
+              "value": 5,
+              "description": "test3",
+              "date": 1586810632721
+            }
+          ]
         },
         {
           "type": "sport",
@@ -41,7 +63,14 @@
           "type": "child",
           "icon": "child_care",
           "value": 7,
-          "name": "Child care"
+          "name": "Child care",
+          "spendingHistory": [
+            {
+              "value": 123,
+              "description": "ewqafef",
+              "date": 1586885046529
+            }
+          ]
         },
         {
           "type": "traveling",
@@ -53,7 +82,14 @@
           "type": "car",
           "icon": "drive_eta",
           "value": 7,
-          "name": "Car"
+          "name": "Car",
+          "spendingHistory": [
+            {
+              "value": 123123,
+              "description": "wewgew",
+              "date": 1586885053224
+            }
+          ]
         },
         {
           "type": "pharmacy",
@@ -78,6 +114,66 @@
           "icon": "fastfood",
           "value": 7,
           "name": "FastFood"
+        }
+      ],
+      "profit": [
+        {
+          "type": "Salary",
+          "name": "Salary",
+          "value": 0,
+          "profitHistory": [
+            {
+              "value": 1111111111,
+              "description": "11111111111111111111",
+              "date": 1587239548657
+            },
+            {
+              "value": 22222222222222,
+              "description": "22222222222222222222222222222222222",
+              "date": 1587239562484
+            }
+          ]
+        },
+        {
+          "type": "Savings money",
+          "name": "Savings money",
+          "value": 0,
+          "profitHistory": [
+            {
+              "value": 111111111111,
+              "description": "111111111111111",
+              "date": 1587239571132
+            },
+            {
+              "value": 22222222222,
+              "description": "2222222222222222",
+              "date": 1587239581196
+            }
+          ]
+        },
+        {
+          "type": "Cash",
+          "name": "Cash",
+          "value": 0,
+          "profitHistory": [
+            {
+              "value": 123,
+              "description": "123123123",
+              "date": 1587240664777
+            }
+          ]
+        },
+        {
+          "type": "Credit card",
+          "name": "Credit card",
+          "value": 0,
+          "profitHistory": [
+            {
+              "value": 2425,
+              "description": "ввтарп",
+              "date": 1587246675791
+            }
+          ]
         }
       ]
     },
@@ -114,6 +210,195 @@
           "icon": "local_grocery_store",
           "value": 2,
           "name": "Food"
+        },
+        {
+          "type": "sport",
+          "icon": "sports_handball",
+          "value": 7,
+          "name": "Sport"
+        }
+      ]
+    }
+  ],
+  "spendingIcons": [
+    {
+      "data": [
+        {
+          "name": "food",
+          "icon": "local_grocery_store"
+        },
+        {
+          "name": "sport",
+          "icon": "sports_handball"
+        },
+        {
+          "name": "homeShopping",
+          "icon": "house"
+        },
+        {
+          "name": "restaurant",
+          "icon": "restaurant"
+        },
+        {
+          "name": "pets",
+          "icon": "pets"
+        },
+        {
+          "name": "childCare",
+          "icon": "child_care"
+        },
+        {
+          "name": "travelling",
+          "icon": "beach_access"
+        },
+        {
+          "name": "car",
+          "icon": "drive_eta"
+        },
+        {
+          "name": "pharmacy",
+          "icon": "local_hospital"
+        },
+        {
+          "name": "connection",
+          "icon": "phone_in_talk"
+        },
+        {
+          "name": "transport",
+          "icon": "departure_board"
+        },
+        {
+          "name": "fastFood",
+          "icon": "fastfood"
+        },
+        {
+          "name": "cardGiftcard",
+          "icon": "card_giftcard"
+        },
+        {
+          "name": "creditCard",
+          "icon": "credit_card"
+        },
+        {
+          "name": "loyalty",
+          "icon": "loyalty"
+        },
+        {
+          "name": "shoppingBasket",
+          "icon": "shopping_basket"
+        },
+        {
+          "name": "shoppingCart",
+          "icon": "shopping_cart"
+        },
+        {
+          "name": "store",
+          "icon": "store"
+        },
+        {
+          "name": "sdStorage",
+          "icon": "sd_storage"
+        },
+        {
+          "name": "attachMoney",
+          "icon": "attach_money"
+        },
+        {
+          "name": "memory",
+          "icon": "memory"
+        },
+        {
+          "name": "euro",
+          "icon": "euro"
+        },
+        {
+          "name": "style",
+          "icon": "style"
+        },
+        {
+          "name": "directionsBike",
+          "icon": "directions_bike"
+        },
+        {
+          "name": "directionsBoat",
+          "icon": "directions_boat"
+        },
+        {
+          "name": "directionsBus",
+          "icon": "directions_bus"
+        },
+        {
+          "name": "directionsCar",
+          "icon": "directions_car"
+        },
+        {
+          "name": "directionsRailway",
+          "icon": "directions_railway"
+        },
+        {
+          "name": "evStation",
+          "icon": "ev_station"
+        },
+        {
+          "name": "localCarWash",
+          "icon": "local_car_wash"
+        },
+        {
+          "name": "localGasStation",
+          "icon": "local_gas_station"
+        },
+        {
+          "name": "localParking",
+          "icon": "local_parking"
+        },
+        {
+          "name": "localShipping",
+          "icon": "local_shipping"
+        },
+        {
+          "name": "localTaxi",
+          "icon": "local_taxi"
+        },
+        {
+          "name": "twoWheeler",
+          "icon": "two_wheeler"
+        },
+        {
+          "name": "childFriendly",
+          "icon": "child_friendly"
+        },
+        {
+          "name": "spa",
+          "icon": "spa"
+        },
+        {
+          "name": "accountBalance",
+          "icon": "account_balance"
+        },
+        {
+          "name": "money",
+          "icon": "money"
+        }
+      ]
+    }
+  ],
+  "profitTypes": [
+    {
+      "data": [
+        {
+          "name": "Credit card"
+        },
+        {
+          "name": "Salary"
+        },
+        {
+          "name": "Savings money"
+        },
+        {
+          "name": "Cash"
+        },
+        {
+          "name": "Premium"
         }
       ]
     }

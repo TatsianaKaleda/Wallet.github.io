@@ -1,35 +1,46 @@
 <section class="wlt-profile">
+  <div class="page-title">
+    <h2 class="page-title-value">
+      User profile
+    </h2>
+  </div>
+
   <div class="wlt-profile-position">
     <h3 class="wlt-profile-title">
       Your profile
     </h3>
+
     <div class="wlt-profile-info">
       <p class="wlt-profile-info-item">
         Your first name:
         <span class="wlt-profile-info-name">
           {{currentUser.first_name}}
         </span>
+
         <button mat-stroked-button
                 class="change wlt-profile-btn"
-                (click)="openChangeFirstName('Your first name')">
+                (click)="changeFirstNamePopup('Your first name', currentUser.first_name)">
           <span class="material-icons">
             create
           </span>
         </button>
       </p>
+
       <p class="wlt-profile-info-item">
         Your last name:
         <span class="wlt-profile-info-name">
           {{currentUser.last_name}}
         </span>
+
         <button mat-stroked-button
                 class="change wlt-profile-btn"
-                (click)="openChangeLastName('Your last name')">
+                (click)="changeLastNamePopup('Your last name', currentUser.last_name)">
           <span class="material-icons">
             create
           </span>
         </button>
       </p>
+
       <p class="wlt-profile-info-item">
         Your email:
         <span class="wlt-profile-info-name">
@@ -37,6 +48,5 @@
         </span>
       </p>
     </div>
-
   </div>
 </section>

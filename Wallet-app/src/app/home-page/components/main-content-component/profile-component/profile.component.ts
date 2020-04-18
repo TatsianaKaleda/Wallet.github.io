@@ -2,6 +2,7 @@ import {Component, Input, OnInit} from '@angular/core';
 import {UserModel} from "../../../../login-page/models/user.model";
 import {MatDialog, MatDialogRef} from "@angular/material/dialog";
 import {DialogPopupComponent} from "../spending-component/components/dialog-popup.component";
+import {ChangePersonalDataService} from "./service/changePersonalData.service";
 
 @Component({
   selector: 'app-profile',
@@ -15,30 +16,36 @@ export class ProfileComponent implements OnInit {
 
   fileNameDialogRef: MatDialogRef<DialogPopupComponent>;
 
-  constructor(private dialog: MatDialog) { }
+  constructor(private dialog: MatDialog,
+              private changePersonalDataService: ChangePersonalDataService) { }
 
   ngOnInit(): void {}
 
-  public openChangeFirstName(profileName: string): void {
+  public changeFirstNamePopup(profileName: string, profileValue: string): void {
     this.fileNameDialogRef = this.dialog.open(DialogPopupComponent, {
       data: {
-        isProfileFirstName: true,
+        isProfile: true,
         profileItem: profileName,
+        profileValue: profileValue
       }
+    });
+
+    this.fileNameDialogRef.afterClosed().subscribe(result => {
+      this.changePersonalDataService.cgangeFirstName(this.currentUser.id, result[0]);
     });
   }
 
-  public openChangeLastName(profileName: string): void {
+  public changeLastNamePopup(profileName: string, profileValue: string): void {
     this.fileNameDialogRef = this.dialog.open(DialogPopupComponent, {
       data: {
-        isProfileLastName: true,
+        isProfile: true,
         profileItem: profileName,
+        profileValue: profileValue
       }
     });
 
-    // this.fileNameDialogRef.afterClosed().subscribe(result => {
-    //   let currentMoment: number = new Date().getTime();
-    //   this.addSpendingService.addSpending(this.currentUser.id, +result[0], result[1], type, currentMoment)
-    // });
+    this.fileNameDialogRef.afterClosed().subscribe(result => {
+      this.changePersonalDataService.cgangeFirstName(this.currentUser.id, result[0])
+    });
   }
 }

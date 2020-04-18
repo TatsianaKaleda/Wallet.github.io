@@ -3,11 +3,24 @@
   <mat-toolbar>
     <mat-icon class="logo-icon">multiline_chart</mat-icon>
 
-    <button mat-button
-            (click)="moveToPage()">
-      <mat-icon>person</mat-icon>
-      {{userName}}
-    </button>
+
+    <div *ngIf="!hideControls">
+      <button mat-button
+              (click)="moveToPage()">
+        <mat-icon>person</mat-icon>
+        {{userName}}
+      </button>
+
+      <span class="wlt-header-separator">
+        |
+      </span>
+
+      <button mat-button
+              (click)="logout()">
+        <mat-icon>exit_to_app</mat-icon>
+        Logout
+      </button>
+    </div>
   </mat-toolbar>
 
 </header>

@@ -1,9 +1,87 @@
 @import "src/assets/styles/main/colors";
-//app-report {
-//  display: block;
-//}
+
 .report-chart {
-  //display: flex; overflow: hidden;
   display: grid;
   margin-top: 100px;
+}
+
+.wlt-report-container {
+  &__title-value {
+    margin: 40px 0;
+    padding: 10px;
+    color: $white;
+    text-align: center;
+    font-weight: 100;
+    text-transform: uppercase;
+    font-size: 35px;
+    background: $grey3;
+  }
+
+  .report-title {
+    &:not(:first-child) {
+      margin-top: 100px;
+    }
+
+    &:first-child {
+      margin-top: 40px;
+    }
+  }
+
+  .advanced-pie-legend {
+    width: 85%!important;
+  }
+}
+
+.wlt-report-container {
+  .report-title {
+    &:not(:first-child) {
+      margin-top: 100px;
+    }
+
+    &:first-child {
+      margin-top: 40px;
+    }
+  }
+
+  .report-title {
+    text-align: center;
+    text-transform: uppercase;
+    background: $grey1-lite;
+    color: white;
+    padding: 10px;
+
+    &-value {
+      font-weight: 100;
+      font-size: 22px;
+    }
+  }
+
+  .advanced-pie-legend {
+    width: 85%!important;
+  }
+
+  .mat-table {
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  &__spending {
+    width: 97%;
+    margin: 70px auto;
+
+    &-title {
+      font-weight: 100;
+    }
+
+    .mat-table {
+      .mat-header-cell, .mat-cell {
+        width: 30%;
+        text-align: center;
+      }
+
+      .mat-header-cell {
+        text-transform: uppercase;
+      }
+    }
+  }
 }

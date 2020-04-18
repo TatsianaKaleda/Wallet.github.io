@@ -1,4 +1,5 @@
 import {SpendingModel} from "./spending.model";
+import {ProfitModel} from './profit.model';
 
 export interface UserModel {
   id?: number;
@@ -7,6 +8,7 @@ export interface UserModel {
   last_name: string;
   email: string;
   spending?: SpendingModel[];
+  profit?: ProfitModel[];
 }
 
 export enum UserEnum {
