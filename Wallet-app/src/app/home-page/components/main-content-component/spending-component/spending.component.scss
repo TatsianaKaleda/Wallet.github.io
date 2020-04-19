@@ -6,19 +6,21 @@
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-      margin-top: 20px;
+      margin: 20px auto 40px;
       width: 100%;
       max-width: 600px;
-
-      &:first-child {
-        margin-top: 40px;
-      }
 
       &-item {
         flex: 0 0 33.333%;
         width: 33.333%;
-        height: 200px;
+        height: 150px;
         transition: 0.3s;
+
+        &.add-btn {
+          flex: 0 0 100%;
+          width: 100%;
+          margin-top: 30px;
+        }
 
         &:hover {
           background: $grey1-lite;
@@ -85,6 +87,19 @@
   }
 
   &-history {
+    &__title {
+      text-align: center;
+      text-transform: uppercase;
+      background: $grey1-lite;
+      color: $white;
+      padding: 10px;
+
+      &-value {
+        font-weight: 100;
+        font-size: 22px;
+      }
+    }
+
     .mat-table {
       margin: 0 auto;
       width: 100%;
@@ -96,6 +111,7 @@
 
       &-title {
         font-weight: 100;
+        text-transform: capitalize;
       }
 
       .mat-table {

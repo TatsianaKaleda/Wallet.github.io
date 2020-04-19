@@ -1,5 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {UserModel} from "../../../../login-page/models/user.model";
+import {SpendingModel} from "../../../../login-page/models/spending.model";
+import {ProfitItemModel} from "../../../../login-page/models/profit.item.model";
 
 @Component({
   selector: 'app-report',
@@ -16,6 +18,9 @@ export class ReportComponent implements OnInit {
   public currentUser: UserModel;
 
   public gradient: boolean = true;
+  public dataSource: SpendingModel[];
+  public totalSpending: number;
+  public totalProfits: number;
 
   colorScheme = {
     domain: [
@@ -35,21 +40,19 @@ export class ReportComponent implements OnInit {
     ]
   };
 
-  constructor() {
-  }
+  constructor() {}
 
   ngOnInit(): void {
+    this.dataSource = this.currentUser.spending;
+    this.totalSpending = this.getTotalValue(this.currentUser.spending);
+    this.totalProfits = this.getTotalValue(this.currentUser.profit);
   }
 
-  onSelect(data): void {
-    // console.log('Item clicked', JSON.parse(JSON.stringify(data)));
-  }
-
-  onActivate(data): void {
-    // console.log('Activate', JSON.parse(JSON.stringify(data)));
-  }
-
-  onDeactivate(data): void {
-    // console.log('Deactivate', JSON.parse(JSON.stringify(data)));
+  public getTotalValue(item: SpendingModel[] | ProfitItemModel[]): number {
+    let totalValue: number = 0;
+    item.forEach((item: SpendingModel) => {
+      totalValue += item.value;
+    });
+    return totalValue;
   }
 }

@@ -3,7 +3,7 @@ import {HttpClient} from '@angular/common/http';
 import {Observable} from "rxjs";
 import {UserModel} from 'src/app/login-page/models/user.model';
 import {ProfitModel} from "../../../../../login-page/models/profit.model";
-
+import {ProfitItemModel} from "../../../../../login-page/models/profit.item.model";
 
 @Injectable()
 export class AddProfitService {
@@ -20,15 +20,18 @@ export class AddProfitService {
       .subscribe(
         (user) => {
           if (user) {
+            let isFirstProfit: boolean = false;
             if (!user.profit) {
-              let newProfit = this.createNewProfit(profitType);
-              user.profit = [newProfit];
+              user.profit = [];
+              let newProfit = this.createNewProfit(profitType, profitItemValue);
+              user.profit.push(newProfit);
+              isFirstProfit = true;
             }
 
             let profit = user.profit.find((item: ProfitModel) => item.type === profitType);
 
             if (profit == null) {
-              let newProfit = this.createNewProfit(profitType);
+              let newProfit = this.createNewProfit(profitType, profitItemValue);
               newProfit.profitHistory.push({
                 "value": profitItemValue,
                 "description": profitItemDescription,
@@ -36,6 +39,14 @@ export class AddProfitService {
               });
               user.profit.push(newProfit);
             } else {
+              if (!isFirstProfit) {
+                let totalValue: number = 0;
+                profit.profitHistory.forEach((profit: ProfitItemModel) => {
+                  totalValue += profit.value;
+                });
+                profit.value = totalValue + profitItemValue;
+              }
+
               profit.profitHistory.push({
                 "value": profitItemValue,
                 "description": profitItemDescription,
@@ -55,13 +66,13 @@ export class AddProfitService {
       );
   }
 
-  public createNewProfit(profitType: string): ProfitModel {
+  public createNewProfit(profitType: string, profitValue: number): ProfitModel {
     return {
       "type": profitType,
       "name": profitType,
-      "value": 0,
+      "value": profitValue,
       "profitHistory": []
-    }
+    };
   }
 
   public getUserData(customerByEmailUrl: string): Observable<UserModel> {

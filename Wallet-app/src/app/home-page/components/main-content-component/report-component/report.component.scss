@@ -5,49 +5,12 @@
   margin-top: 100px;
 }
 
-.wlt-report-container {
-  &__title-value {
-    margin: 40px 0;
-    padding: 10px;
-    color: $white;
-    text-align: center;
-    font-weight: 100;
-    text-transform: uppercase;
-    font-size: 35px;
-    background: $grey3;
-  }
-
-  .report-title {
-    &:not(:first-child) {
-      margin-top: 100px;
-    }
-
-    &:first-child {
-      margin-top: 40px;
-    }
-  }
-
-  .advanced-pie-legend {
-    width: 85%!important;
-  }
-}
-
-.wlt-report-container {
-  .report-title {
-    &:not(:first-child) {
-      margin-top: 100px;
-    }
-
-    &:first-child {
-      margin-top: 40px;
-    }
-  }
-
-  .report-title {
+.wlt-report {
+  &__subtitle {
     text-align: center;
     text-transform: uppercase;
     background: $grey1-lite;
-    color: white;
+    color: $white;
     padding: 10px;
 
     &-value {
@@ -56,31 +19,82 @@
     }
   }
 
-  .advanced-pie-legend {
-    width: 85%!important;
-  }
-
-  .mat-table {
-    margin: 0 auto;
-    width: 100%;
-  }
-
-  &__spending {
-    width: 97%;
-    margin: 70px auto;
-
-    &-title {
+  &-container {
+    &__title-value {
+      margin: 40px 0;
+      padding: 10px;
+      color: $white;
+      text-align: center;
       font-weight: 100;
+      text-transform: uppercase;
+      font-size: 35px;
+      background: $grey3;
     }
 
-    .mat-table {
-      .mat-header-cell, .mat-cell {
-        width: 30%;
-        text-align: center;
+    .report-title {
+      &:not(:first-child) {
+        margin-top: 100px;
       }
 
-      .mat-header-cell {
+      &:first-child {
+        margin-top: 40px;
+      }
+    }
+
+    .advanced-pie-legend {
+      width: 85%!important;
+    }
+  }
+
+  &-item {
+    margin-bottom: 100px;
+  }
+
+  &-total {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 50px 0;
+
+    &_spending,
+    &_profits {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 250px;
+      height: 250px;
+      border-radius: 250px;
+      border: 1px solid $grey1-lite;
+      background: $grey1-lite;
+
+      &-title {
+        text-align: center;
+        font-weight: 100;
         text-transform: uppercase;
+      }
+
+      &-value {
+        font-size: 50px;
+        font-weight: 100;
+
+        &-currency {
+          font-size: 20px;
+        }
+      }
+    }
+
+    &_spending {
+      background: $grey1-lite;
+
+      &-value {
+        color: $white;
+      }
+    }
+
+    &_profits {
+      background: $white;
+
+      &-value {
+        color: $grey1-lite;
       }
     }
   }

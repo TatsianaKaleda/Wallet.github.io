@@ -5,14 +5,67 @@
     </h2>
   </div>
 
-  <div class="report-chart">
-    <ngx-charts-advanced-pie-chart
-      [scheme]="colorScheme"
-      [results]="currentUser.spending"
-      [gradient]="gradient"
-      (select)="onSelect($event)"
-      (activate)="onActivate($event)"
-      (deactivate)="onDeactivate($event)">
-    </ngx-charts-advanced-pie-chart>
-  </div>
+  <section class="wlt-report-total">
+    <div class="wlt-report-total-container">
+      <h3 class="wlt-report-total_spending-title">
+        Total spending
+      </h3>
+
+      <div class="wlt-report-total_spending">
+        <p class="wlt-report-total_spending-value">
+          {{totalSpending}}
+          <sup class="wlt-report-total_spending-value-currency">
+            $
+          </sup>
+        </p>
+      </div>
+    </div>
+
+    <div class="wlt-report-total-container">
+      <h3 class="wlt-report-total_spending-title">
+        Total spending
+      </h3>
+
+      <div class="wlt-report-total_profits">
+        <p class="wlt-report-total_profits-value">
+          {{totalProfits}}
+          <sup class="wlt-report-total_spending-value-currency">
+            $
+          </sup>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="wlt-report-item">
+    <div class="wlt-report__subtitle">
+      <h2 class="wlt-report__subtitle-value">
+        Spending
+      </h2>
+    </div>
+
+    <div class="report-chart">
+      <ngx-charts-advanced-pie-chart
+        [scheme]="colorScheme"
+        [results]="currentUser.spending"
+        [gradient]="gradient">
+      </ngx-charts-advanced-pie-chart>
+    </div>
+  </section>
+
+  <section class="wlt-report-item">
+    <div class="wlt-report__subtitle">
+      <h2 class="wlt-report__subtitle-value">
+        Profit
+      </h2>
+    </div>
+
+    <div class="report-chart">
+      <ngx-charts-advanced-pie-chart
+        [scheme]="colorScheme"
+        [results]="currentUser.profit"
+        [gradient]="gradient">
+      </ngx-charts-advanced-pie-chart>
+    </div>
+  </section>
 </ng-container>

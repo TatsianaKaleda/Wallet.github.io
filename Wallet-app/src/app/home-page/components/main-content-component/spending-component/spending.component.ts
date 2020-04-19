@@ -45,7 +45,7 @@ export class SpendingComponent implements OnInit {
     this.dataSource = this.currentUser.spending;
   }
 
-  public openDialog(type: string): void {
+  public openDialog(type: string, icon: string): void {
     this.fileNameDialogRef = this.dialog.open(DialogPopupComponent, {
       data: {
         type: type,

@@ -1,8 +1,7 @@
 import {Component, Inject, NgZone, OnInit} from '@angular/core';
 import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
 import {SpendingIconsModel} from 'src/app/models/spending-icons.model';
-import {ProfitTypesModel} from "../../../../../models/profit-types.model";
-
+import {ProfitTypesModel} from 'src/app/models/profit-types.model';
 
 export interface DialogData {
   type?: string;

@@ -19,27 +19,19 @@ export class AddSpendingService {
       .subscribe(
         (user) => {
           if (user) {
-            let spending;
-            if (!user.spending) {
-              user.spending = [
-                {
-                  "type": spendingType,
-                  "icon": "",
-                  "name": spendingType,
-                  "value": 0
-                }
-              ];
-            }
-
-            if (user.spending) {
-              spending = user.spending.find((item: SpendingModel) => item.type === spendingType);
-            } else {
-              spending = {};
-            }
+            let spending: SpendingModel = user.spending.find((item: SpendingModel) => item.type === spendingType);
 
             if (!spending.spendingHistory) {
               spending.spendingHistory = [];
             }
+
+            let totalValue: number = 0;
+            spending.spendingHistory.forEach((spending: SpendingModel) => {
+              totalValue += spending.value;
+            });
+
+            spending.value = totalValue + spendingValue;
+
             spending.spendingHistory.push({
               "value": spendingValue,
               "description": spendingDescription,
@@ -47,8 +39,8 @@ export class AddSpendingService {
             });
 
             this.http.put<any>(customerByEmailUrl,
-                user
-              ).subscribe(data => {
+              user
+            ).subscribe(data => {
             })
           }
         },
@@ -65,18 +57,27 @@ export class AddSpendingService {
       .subscribe(
         (user) => {
           if (user) {
-            if (!user.spending.find((item: SpendingModel) => item.icon === icon)) {
+            if (!user.spending) {
+              user.spending = [{
+                "type": name,
+                "icon": icon,
+                "value": 0,
+                "name": name,
+                "spendingHistory": []
+              }];
+            } else if (!user.spending?.find((item: SpendingModel) => item.icon === icon)) {
               user.spending.push({
                 "type": name,
                 "icon": icon,
                 "value": 0,
-                "name": name
-              })
+                "name": name,
+                "spendingHistory": []
+              });
             }
 
             this.http.put<any>(customerByEmailUrl,
-                user
-              ).subscribe(data => {
+              user
+            ).subscribe(data => {
             })
           }
         },

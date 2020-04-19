@@ -6,9 +6,70 @@
       "last_name": "Eschweiler",
       "password": "1",
       "email": "1",
+      "profit": [
+        {
+          "type": "Salary",
+          "name": "Salary",
+          "value": 741214,
+          "profitHistory": [
+            {
+              "value": 1,
+              "description": "122",
+              "date": 1587307382757
+            },
+            {
+              "value": 2,
+              "description": "333",
+              "date": 1587307393187
+            },
+            {
+              "value": 3414,
+              "description": "24",
+              "date": 1587307531383
+            },
+            {
+              "value": 3,
+              "description": "4",
+              "date": 1587308054014
+            },
+            {
+              "value": 4,
+              "description": "4444",
+              "date": 1587308334694
+            },
+            {
+              "value": 333,
+              "description": "334223",
+              "date": 1587308404198
+            },
+            {
+              "value": 737457,
+              "description": "аоаопаро",
+              "date": 1587308487948
+            }
+          ]
+        },
+        {
+          "type": "Savings money",
+          "name": "Savings money",
+          "value": 43226,
+          "profitHistory": [
+            {
+              "value": 12,
+              "description": "12",
+              "date": 1587308524022
+            },
+            {
+              "value": 43214,
+              "description": "1екауц23а",
+              "date": 1587308540936
+            }
+          ]
+        }
+      ],
       "spending": [
         {
-          "type": "food",
+          "type": "qfaf",
           "icon": "local_grocery_store",
           "value": 5,
           "name": "Food",
@@ -36,25 +97,14 @@
           ]
         },
         {
-          "type": "sport",
+          "type": "afaf",
           "icon": "sports_handball",
-          "value": 7,
-          "name": "Sport"
+          "value": 0,
+          "name": "afaf",
+          "spendingHistory": []
         },
         {
-          "type": "home",
-          "icon": "house",
-          "value": 5,
-          "name": "Home shopping"
-        },
-        {
-          "type": "restaurant",
-          "icon": "restaurant",
-          "value": 7,
-          "name": "Restaurant, cafe and els"
-        },
-        {
-          "type": "pets",
+          "type": "asfafe",
           "icon": "pets",
           "value": 5,
           "name": "Pets"
@@ -114,66 +164,6 @@
           "icon": "fastfood",
           "value": 7,
           "name": "FastFood"
-        }
-      ],
-      "profit": [
-        {
-          "type": "Salary",
-          "name": "Salary",
-          "value": 0,
-          "profitHistory": [
-            {
-              "value": 1111111111,
-              "description": "11111111111111111111",
-              "date": 1587239548657
-            },
-            {
-              "value": 22222222222222,
-              "description": "22222222222222222222222222222222222",
-              "date": 1587239562484
-            }
-          ]
-        },
-        {
-          "type": "Savings money",
-          "name": "Savings money",
-          "value": 0,
-          "profitHistory": [
-            {
-              "value": 111111111111,
-              "description": "111111111111111",
-              "date": 1587239571132
-            },
-            {
-              "value": 22222222222,
-              "description": "2222222222222222",
-              "date": 1587239581196
-            }
-          ]
-        },
-        {
-          "type": "Cash",
-          "name": "Cash",
-          "value": 0,
-          "profitHistory": [
-            {
-              "value": 123,
-              "description": "123123123",
-              "date": 1587240664777
-            }
-          ]
-        },
-        {
-          "type": "Credit card",
-          "name": "Credit card",
-          "value": 0,
-          "profitHistory": [
-            {
-              "value": 2425,
-              "description": "ввтарп",
-              "date": 1587246675791
-            }
-          ]
         }
       ]
     },
