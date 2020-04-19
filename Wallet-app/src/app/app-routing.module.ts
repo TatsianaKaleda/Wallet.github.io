@@ -3,7 +3,7 @@ import {Routes, RouterModule} from '@angular/router';
 import {HomePageComponent} from "./home-page/home-page.component";
 import {LoginPageComponent} from './login-page/login-page.component';
 import {LoginPageGuard} from "./guards/login-page.guard";
-import {PageNotFoundComponent} from "./models/page-not-found-component/page-not-found.component";
+import {PageNotFoundComponent} from "./page-not-found-component/page-not-found.component";
 
 RouterModule.forRoot([
   {

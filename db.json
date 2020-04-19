@@ -20,6 +20,13 @@
       " first_name ": " Ann ",
       " last_name ": " Smith ",
       "электронная почта": "ann@codingthesmartway.com"
+    },
+    {
+      "first_name": "Татьяна",
+      "last_name": "Каледа",
+      "password": "123",
+      "email": "tatsiana.kaleda90@gmail.com",
+      "id": 3
     }
   ]
 }

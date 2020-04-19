@@ -22,7 +22,7 @@ import {BigMenuComponent} from "./home-page/components/bigMenu-component/bigMenu
 import {SmallMenuComponent} from "./home-page/components/main-content-component/small-menu-component/small-menu.component";
 import {DialogPopupComponent} from "./home-page/components/main-content-component/spending-component/components/dialog-popup.component";
 import {ProfileComponent} from "./home-page/components/main-content-component/profile-component/profile.component";
-import {PageNotFoundComponent} from "./models/page-not-found-component/page-not-found.component";
+import {PageNotFoundComponent} from "./page-not-found-component/page-not-found.component";
 //Shared components
 
 //Material components
